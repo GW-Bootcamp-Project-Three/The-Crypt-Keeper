@@ -10,7 +10,7 @@ import re
 from collections import Counter
 import plotly.express as px
 from plotly import graph_objects as go
-from RB_dbFunctions import view_exists, get_dataframe_from_db
+from CK_dbFunctions import view_exists, get_dataframe_from_db
 
 app = Flask(__name__)  
 
