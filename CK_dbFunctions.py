@@ -43,10 +43,10 @@ def view_exists(db_view_name):
     sql = '''
     SELECT TABLE_NAME DB_VIEW FROM (
         SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.VIEWS
-        WHERE TABLE_SCHEMA = 'ripe_bananas' 
+        WHERE TABLE_SCHEMA = 'CryptKeeper' 
         UNION
         SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
-        WHERE TABLE_SCHEMA = 'ripe_bananas' 
+        WHERE TABLE_SCHEMA = 'CryptKeeper' 
     ) DB_VIEWS  
     '''
     df = pd.read_sql(sql, con=conn)
