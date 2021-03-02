@@ -1,38 +1,28 @@
+
+/*Font quick refrence*/
 @font-face {
     font-family: 'nexa_lightregular';
-    src: url('static/fonts/nexa_light-webfont.woff2') format('woff2'),
-         url('static/fonts/nexa_light-webfont.woff') format('woff');
+    src: url('/static/fonts/nexa_light-webfont.woff2') format('woff2'),
+         url('/static/fonts/nexa_light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'nexa_blackregular';
-    src: url('static/fonts/fontfabric_-_nexablack-webfont.woff2') format('woff2'),
-         url('static/fonts/fontfabric_-_nexablack-webfont.woff') format('woff');
+    src: url('/static/fonts/fontfabric_-_nexablack-webfont.woff2') format('woff2'),
+         url('/static/fonts/fontfabric_-_nexablack-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'nexa_heavyregular';
-    src: url('static/fonts/fontfabric_-_nexaheavy-webfont.woff2') format('woff2'),
-         url('static/fonts/fontfabric_-_nexaheavy-webfont.woff') format('woff');
+    src: url('/static/fonts/fontfabric_-_nexaheavy-webfont.woff2') format('woff2'),
+         url('/static/fonts/fontfabric_-_nexaheavy-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'nexa_boldregular';
@@ -40,11 +30,9 @@
          url('/static/fonts/nexa_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-@media only screen and (min-width: 1200px) {
- 
 
+@media only screen and (min-width: 1200px) {
   .navbar-nav {
     position: absolute;
     right: 0px;
@@ -62,6 +50,7 @@
 
 body,h1,h2,h3,h4,h5,h6 {font-family: 'nexa_boldregular', sans-serif}
 
+/*Color */
 .ckOrange {
     background-color: #f3723a;
     color: #fff;
@@ -78,21 +67,71 @@ body,h1,h2,h3,h4,h5,h6 {font-family: 'nexa_boldregular', sans-serif}
 .ckLightGray {
     color: #c5c6c7;
 }
+
+/*Spacific Styling*/
 a {
+ color: #f3723a;
+}
+
+a:hover {
+ text-decoration: none;
  color: #f3723a;
 }
 
 nav a, nav a:hover {
     color: #fff;
+    font-family: 'nexa_lightregular';
+    font-size: 1.3em;
 }
 
 .jumbotron {
     height: 75%;
     padding: 200px;
     margin-bottom: 0px;
+    text-align: center;
+    font-size: 4em;
+    font-family: 'nexa_blackregular';
 }
 
 footer {
     min-height: 50%;
     padding: 1em 2em;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 1);
+  border: none;
+  color: #f3723a;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, .75);
+    color: #f3723a;
+}
+
+.block-center {
+    position: relative;
+    margin: 0px auto;
+    
+}
+
+nav a:hover {
+    border-bottom: 3px solid #fff;
+}
+
+span.light {
+    font-family: 'nexa_lightregular';
+}
+
+span.trans {
+    opacity: .5;
 }
