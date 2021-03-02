@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'nexa_lightregular';
+    src: url('static/fonts/nexa_light-webfont.woff2') format('woff2'),
+         url('static/fonts/nexa_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nexa_blackregular';
+    src: url('static/fonts/fontfabric_-_nexablack-webfont.woff2') format('woff2'),
+         url('static/fonts/fontfabric_-_nexablack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nexa_heavyregular';
+    src: url('static/fonts/fontfabric_-_nexaheavy-webfont.woff2') format('woff2'),
+         url('static/fonts/fontfabric_-_nexaheavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nexa_boldregular';
+    src: url('/static/fonts/nexa_bold-webfont.woff2') format('woff2'),
+         url('/static/fonts/nexa_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@media only screen and (min-width: 1200px) {
+ 
+
+  .navbar-nav {
+    position: absolute;
+    right: 0px;
+  }
+}
+
+
+/* Full height image header 
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://wallpaperaccess.com/full/450210.jpg");
+  min-height: 100%;
+}*/
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'nexa_boldregular', sans-serif}
+
+.ckOrange {
+    background-color: #f3723a;
+    color: #fff;
+}
+.ckBlue {
+    color: #c5c6c7;
+    background-color: #0a3f54;
+}
+
+.ckDarkGray {
+    background-color: #595753;
+    color: #c5c6c7;
+}
+.ckLightGray {
+    color: #c5c6c7;
+}
+a {
+ color: #f3723a;
+}
+
+nav a, nav a:hover {
+    color: #fff;
+}
+
+.jumbotron {
+    height: 75%;
+    padding: 200px;
+    margin-bottom: 0px;
+}
+
+footer {
+    min-height: 50%;
+    padding: 1em 2em;
+}
