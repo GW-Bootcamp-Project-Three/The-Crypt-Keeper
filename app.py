@@ -54,9 +54,9 @@ def about():
 
     return render_template("about.html")
 
-@app.route("/map")
-def map():
-    return render_template("maps.html", accessToken=accessToken)
+@app.route("/coinsearch")
+def coinsearch():
+    return render_template("coinsearch.html", accessToken=accessToken)
 
 
 @app.route("/api/lookup/<query>")
@@ -73,7 +73,7 @@ def get_title(query):
 
 ########################
 ## GET DATA FROM DB RETURN JSON
-@app.route("/api/view/<db_view_name>") #set up for testing need to SECCURE!!!!!
+@app.route("/api/view/<db_view_name>") 
 def get_db_view(db_view_name): 
  
     df = get_dataframe_from_db(db_view_name)

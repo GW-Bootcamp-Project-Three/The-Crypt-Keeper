@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About</title>
+
+    {% include'head.html' %}
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    {% include'nav.html' %}
+
+    <!-- Jumbotron -->
+    <div class="jumbotron ckOrange contianer-fluid" id="home">
+        <div>
+            <p> <span class='light'>crypt</span>keeper <br>
+                <span class='light'> Sveena is The Best Human Person!</span>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="ckDarkGray contianer-fluid" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ckLightGray">
+                    <input class="form-control" id="coin-filter" name="coin-filter" type="text">
+                    <table id='results' class='table table-striped'>
+                        <thead id='results-head'></thead>
+                        <tbody id='reuslts-body'></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    {% include'footer.html' %}
+
+
+
+</body>
+<script src="{{ url_for('static', filename='js/coinsearch.js') }}"></script>
+</html>
