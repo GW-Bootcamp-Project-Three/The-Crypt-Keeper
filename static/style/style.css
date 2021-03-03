@@ -31,7 +31,7 @@
     font-weight: normal;
     font-style: normal;
 }
-
+/*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {
     position: absolute;
@@ -47,8 +47,50 @@
   min-height: 100%;
 }*/
 
-body,h1,h2,h3,h4,h5,h6 {font-family: 'nexa_boldregular', sans-serif}
+body {
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
 
+h1 {
+    font-size: 2.625em;
+    line-height: 1.512em;
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
+
+h2 {
+    font-size: 2.063em;
+    line-height: 1.545em;
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
+
+h3 {
+    font-size: 1.625em;
+    line-height: 1.577em;
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
+
+h4 {
+    font-size: 1.281em;
+    line-height: 1.61em;
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
+
+h5 {
+    font-size: 1em;
+    line-height: 1.656em;
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
+
+h6 {
+    font-size: .781em;
+    line-height: 1.72em;
+    font-family: 'nexa_heavyregular', 'sans-serif';
+}
+
+body, html {
+    min-height: 100vh;
+    font-family: 'nexa_boldregular', sans-serif
+}
 /*Color */
 .ckOrange {
     background-color: #f3723a;
@@ -64,7 +106,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: 'nexa_boldregular', sans-serif}
     color: #c5c6c7;
 }
 .ckLightGray {
-    color: #c5c6c7;
+    color: #595753;
+    background-color:#c5c6c7;
 }
 
 /*Spacific Styling*/
@@ -90,7 +133,7 @@ nav a, nav a:hover {
 } 
 .jumbotron {
     position:relative;
-    height: 75%;
+    height: 75vh;
     width:100vw;
     padding: 200px;
     margin-bottom: 0px;
@@ -100,6 +143,7 @@ nav a, nav a:hover {
    
 }
 
+/*Logo Overlay*/
 .jumbotron div.l1  { 
             z-index:2 ;
             opacity:.2;
@@ -109,7 +153,7 @@ nav a, nav a:hover {
 }
 
 footer {
-    min-height: 50%;
+    min-height: 25vh;
     padding: 1em 2em;
 }
 
@@ -126,6 +170,8 @@ footer {
   cursor: pointer;
   border-radius: 16px;
   text-transform: uppercase;
+  z-index: 99;
+  position: relative;
 }
 
 .button:hover {

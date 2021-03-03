@@ -11,22 +11,22 @@
 
   <!-- Navbar (sit on top) -->
   {% include'nav.html' %}
-  
+
         <script type='text/javascript' src='/static/js/jquery.vide.min.js'></script>
   <!-- Jumbotron: specific to each page -->
   <div class="jumbotron ckOrange contianer-fluid" id="home" >
-
+        <!-- Overlays -->
         <div class="absolute-wrapper layer l1 "></div>
         <div class="absolute-wrapper layer l2"></div>
         
 
-
+    <!-- Formatted Text: use span to create formatting effects -->
     <div>
       <p> <span class='light'>crypt</span>keeper <br>
         we take the cry <br>
         out of <span class='trans'>cry</span>ptocurrency
       </p>
-      <a class="button">Pill Button 1</a><br>
+      <a class="button">Get Started!</a><br>
       <i class="fa fa-arrow-down" aria-hidden="true"></i>
 
     </div>
@@ -35,9 +35,8 @@
   <!-- Footer -->
   {% include'footer.html' %}
 
-
-
 </body>
+<!-- Video Layer - Not currently working -->
         <script>
   $(document).ready(function () {
            $('.jumbotron').vide({
