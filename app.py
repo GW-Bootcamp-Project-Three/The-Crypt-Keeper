@@ -54,6 +54,12 @@ def about():
 
     return render_template("about.html")
 
+
+@app.route("/learn", methods=['GET', 'POST'])
+def learn():
+
+    return render_template("learn.html")
+    
 @app.route("/coinsearch")
 def coinsearch():
     return render_template("coinsearch.html", accessToken=accessToken)
