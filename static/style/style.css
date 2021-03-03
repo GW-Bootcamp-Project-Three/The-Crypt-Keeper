@@ -39,7 +39,6 @@
   }
 }
 
-
 /* Full height image header 
 .bgimg-1 {
   background-position: center;
@@ -83,14 +82,30 @@ nav a, nav a:hover {
     font-family: 'nexa_lightregular';
     font-size: 1.3em;
 }
-
+.absolute-wrapper{
+    content:''; position: absolute;overflow: hidden;     
+    top: 0; left: 0; bottom: 0;  right: 0;    
+    border: none; padding: 0;  margin: 0;
+ 
+} 
 .jumbotron {
+    position:relative;
     height: 75%;
+    width:100vw;
     padding: 200px;
     margin-bottom: 0px;
     text-align: center;
     font-size: 4em;
     font-family: 'nexa_blackregular';
+   
+}
+
+.jumbotron div.l1  { 
+            z-index:2 ;
+            opacity:.2;
+            background-repeat: no-repeat;
+            background-position:105% 110%; 
+            background-image:url(/static/images/bm-500.png);
 }
 
 footer {
@@ -134,4 +149,8 @@ span.light {
 
 span.trans {
     opacity: .5;
+}
+
+.nav-link {
+    display: inline-block;
 }

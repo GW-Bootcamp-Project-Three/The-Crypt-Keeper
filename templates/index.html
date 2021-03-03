@@ -11,9 +11,15 @@
 
   <!-- Navbar (sit on top) -->
   {% include'nav.html' %}
-
+        <script type='text/javascript' src='/static/js/jquery.vide.min.js'></script>
   <!-- Jumbotron: specific to each page -->
-  <div class="jumbotron ckOrange contianer-fluid" id="home">
+  <div class="jumbotron ckOrange contianer-fluid" id="home" >
+
+        <div class="absolute-wrapper layer l1 "></div>
+        <div class="absolute-wrapper layer l2"></div>
+        
+
+
     <div>
       <p> <span class='light'>crypt</span>keeper <br>
         we take the cry <br>
@@ -31,5 +37,26 @@
 
 
 </body>
+        <script>
+  $(document).ready(function () {
+           $('.jumbotron').vide({
+              mp4: '/static/video/01.mp4',
+              webm: '/static/video/01.webm',
+              poster: '/static/video/01.png'
+            }, {
+              volume: 1,
+              playbackRate: 1,
+              muted: true,
+              loop: true,
+              autoplay: true,
+              position: '50% 50%', // Similar to the CSS `background-position` property.
+              posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+              resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+              bgColor: 'transparent', // Allow custom background-color for Vide div,
+              className: '' // Add custom CSS class to Vide div
+            });
+  });
 
+
+        </script>
 </html>
