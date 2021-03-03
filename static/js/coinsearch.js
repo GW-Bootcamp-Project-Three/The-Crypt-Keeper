@@ -9,7 +9,7 @@ inputBox.on('keyup', init);
 function init() {
     d3.json('/api/view/Coins').then((data) => {
         //console.log(data);
-        createHeaders(data);
+        //createHeaders(data);
         displayResults(data);
     })
  
@@ -44,8 +44,23 @@ function displayResults(coins) {
     filterData.forEach(coin => {
         var row = tbody.append('tr');
         Object.entries(coin).forEach(([key, value]) => {
-            var cell = row.append('td');
-            cell.text(value);
+            if (key == 'CoinName'){
+                var cell = row.append('td');
+                cell.text(value);
+            }
+            if (key == 'TokenName') {
+                var cell = row.append('td');
+                cell.text(value);
+            }
+            if (key == 'CoinImg') {
+                var cell = row.append('td');
+                var img = cell.append('img');
+                img.attr('src', value)
+                //cell.text(value);
+
+            }
+        
+
         });
 
     });
