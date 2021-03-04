@@ -31,13 +31,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/*Media Query */
-@media only screen and (min-width: 1200px) {
-  .navbar-nav {
-    position: absolute;
-    right: 0px;
-  }
-}
+
 
 /* Full height image header 
 .bgimg-1 {
@@ -138,7 +132,6 @@ nav a, nav a:hover {
     padding: 200px;
     margin-bottom: 0px;
     text-align: center;
-    font-size: 4em;
     font-family: 'nexa_blackregular';
    
 }
@@ -203,4 +196,35 @@ span.trans {
 
 #reuslts-body img{
     max-height: 24px;
+}
+
+/*Media Query */
+@media only screen and (min-width: 1200px) {
+  .navbar-nav {
+    position: absolute;
+    right: 0px;
+  }
+    .jumbotron {
+    font-size: 4em; 
+}
+}
+
+@media only screen and (max-width: 1200px) {
+  .jumbotron {
+    font-size: 3em; 
+}
+}
+
+@media only screen and (max-width: 980px) {
+  .jumbotron {
+    font-size: 2em; 
+}
+}
+
+@media only screen and (max-width: 650px) {
+  .jumbotron {
+    font-size: 1.5em; 
+    padding: 200px 1em 1em 1em ;
+    
+}
 }

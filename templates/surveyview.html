@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crypt Survey</title> 
+    {% include'head.html' %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head> 
+<body> 
+    <!-- Navbar (sit on top) -->
+    {% include'nav.html' %}
+
+    <!-- Jumbotron -->
+    <div class="jumbotron ckOrange contianer-fluid" id="survey">
+        <div>
+            <p> <span class='light'>Crypt</span>keeper<br>
+                <span class='light'>Your crypto</span> repository <span class='light'>for cryptocurrency data</span> 
+            </p> 
+        </div>
+    </div> 
+        <div class=" contianer-fluid">
+            <div class="container" >
+                
+
+            </div>
+         
+        </div>
+    <div class=" contianer-fluid" >
+        <div class="container" id="vwSurveyUnderstanding"></div> 
+        <div class="container" id="vwSurveyHaveInvested"></div>
+        <div class="container" id="vwSurveyCryptoSafe"></div>
+        <div class="container" id="vwSurveyCryptoConcern"></div>
+        <div class="container" id="vwSurveyMoreRiskCryptoStock"></div>
+    </div>
+<script>
+    
+    plotloader("vwSurveyUnderstanding", "Understanding", "Crypto Understanding By Age");
+    plotloader("vwSurveyHaveInvested", "HaveInvested", "Who Invests?");
+    plotloader("vwSurveyCryptoSafe", "CryptoSafe", "Who Considers Crypto Safe?");
+    plotloader("vwSurveyCryptoConcern", "CryptoConcern", "What are Crypto Concerns?");
+    plotloader("vwSurveyMoreRiskCryptoStock", "MoreRiskCryptoStock", "What is more risky Crypo vs. Stock?");
+    function plotloader(view, colkey, ptitle) {
+
+        d3.json(`/api/view/${view}`).then((data) => {
+            let cnt = 0; 
+            let CUR_AGE = '';
+
+            var TRACE_AGE_18_29 = { y: [], x: []
+                , type: 'bar'
+                , marker: { color: 'rgb(242,113,58)'  }
+                , name: 'AGE RANGE 18 - 29'
+            };
+            var TRACE_AGE_30_44 = { y: [], x: [], type: 'bar'
+                , marker: { color: 'rgb(10,60,80)' }
+                , name: 'AGE RANGE 30 - 44' 
+            };
+            var TRACE_AGE_45 = { y: [], x: [], type: 'bar'
+                , marker: { color: 'rgb(90,90,90)' } 
+                , name: 'AGE RANGE 45+' 
+            };
+
+
+            dlist = [];
+            data.forEach(d => {
+                Object.entries(d).forEach(([key, value]) => {
+                   
+                    if (d.AGE != CUR_AGE) {
+                        CUR_AGE = d.AGE; 
+                    }
+                    if (CUR_AGE == 'AGE_18_29') {
+                        if (key == 'CNT') {
+                            TRACE_AGE_18_29.y.push(value)
+                        } else if (key == colkey) {
+                            TRACE_AGE_18_29.x.push(value)
+                        }
+                    } else if (CUR_AGE == 'AGE_30_45') {
+                        if (key == 'CNT') {
+                            TRACE_AGE_30_44.y.push(value)
+                        } else if (key == colkey) {
+                            TRACE_AGE_30_44.x.push(value)
+                        }
+                    } else {
+                        if (key == 'CNT') {
+                            TRACE_AGE_45.y.push(value)
+                        } else if (key == colkey) {
+                            TRACE_AGE_45.x.push(value)
+                        }
+                    }
+                    cnt++;
+                });
+            });
+            var dt = [TRACE_AGE_18_29, TRACE_AGE_30_44, TRACE_AGE_45];
+            console.log(TRACE_AGE_18_29);
+            var layout = {
+                title: ptitle,
+                font: { family: 'nexa_heavyregular, sans-serif'  },
+                showlegend: true,
+                xaxis: { tickangle: -15 },
+                yaxis: { zeroline: false,  gridwidth: 2  },
+                bargap: 2.15
+            };
+            Plotly.newPlot(`${view}`, dt, layout);
+        }); 
+    } 
+   
+</script> 
+    <!-- Footer -->
+    {% include'footer.html' %} 
+</body>
+
+</html>

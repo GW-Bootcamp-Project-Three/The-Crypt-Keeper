@@ -8,13 +8,17 @@ inputBox.on('keyup', init);
 
 function init() {
     d3.json('/api/view/Coins').then((data) => {
-        //console.log(data);
+        
         //createHeaders(data);
-        displayResults(data);
+        var pagedata = d3.select('#page-data');
+        pagedata.attr('value', JSON.stringify(data));
+        //displayResults(data);
+        data = JSON.parse(pagedata.property('value'));
+        console.log(data);
     })
  
 };
-
+init() ;
 function createHeaders(transactions) {
     var tableHead = d3.select('#results-head');
     tableHead.html('');
@@ -44,6 +48,12 @@ function displayResults(coins) {
     filterData.forEach(coin => {
         var row = tbody.append('tr');
         Object.entries(coin).forEach(([key, value]) => {
+            if (key == 'CoinImg') {
+                var cell = row.append('td');
+                var img = cell.append('img');
+                img.attr('src', value)
+                //cell.text(value);
+            }
             if (key == 'CoinName'){
                 var cell = row.append('td');
                 cell.text(value);
@@ -51,18 +61,7 @@ function displayResults(coins) {
             if (key == 'TokenName') {
                 var cell = row.append('td');
                 cell.text(value);
-            }
-            if (key == 'CoinImg') {
-                var cell = row.append('td');
-                var img = cell.append('img');
-                img.attr('src', value)
-                //cell.text(value);
-
-            }
-        
-
-        });
-
-    });
-
+            } 
+        }); 
+    }); 
 }

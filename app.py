@@ -89,7 +89,9 @@ def get_db_view(db_view_name):
     return resp
  
 
-
+@app.route("/surveyview")
+def surveyview():
+    return render_template("surveyview.html")
 
 # run the app in debug mode
 if __name__ == "__main__":
