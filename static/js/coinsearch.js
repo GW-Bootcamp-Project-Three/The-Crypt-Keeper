@@ -11,10 +11,10 @@ function init() {
         
         //createHeaders(data);
         var pagedata = d3.select('#page-data');
-        pagedata.attr('value', JSON.stringify(data));
-        //displayResults(data);
-        data = JSON.parse(pagedata.property('value'));
-        console.log(data);
+        //pagedata.attr('value', JSON.stringify(data));
+        displayResults(data);
+        //data = JSON.parse(pagedata.property('value'));
+        //console.log(data);
     })
  
 };

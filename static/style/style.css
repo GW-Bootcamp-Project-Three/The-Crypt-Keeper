@@ -208,7 +208,6 @@ span.trans {
     height: 100%;
     width:100vw;
     padding: 200px
-
 }
 
 #coin div {
@@ -217,17 +216,24 @@ span.trans {
 }
 
 .col1, .col2 {
-    height: 100%;
-    
+    height: 100%;   
 }
 
 .col1 p {
     text-align: justify;
-    padding: ;
+    
     font-family: 'nexa_lightregular';
 }
+/*#595753*/
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: rgba(255,255,255,.25);
+   color: white;
+ }
 
-
+ .table-striped {
+    color: white;
+ }
 
 /*Media Query */
 @media only screen and (min-width: 1200px) {
