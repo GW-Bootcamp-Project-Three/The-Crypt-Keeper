@@ -55,6 +55,12 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/coin", methods=['GET', 'POST'])
+def coin():
+
+    return render_template("coin.html")
+
+
 @app.route("/learn", methods=['GET', 'POST'])
 def learn():
 

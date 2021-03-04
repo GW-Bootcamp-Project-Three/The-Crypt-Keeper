@@ -137,12 +137,16 @@ nav a, nav a:hover {
 }
 
 /*Logo Overlay*/
-.jumbotron div.l1  { 
+div.l1  { 
             z-index:2 ;
             opacity:.2;
             background-repeat: no-repeat;
             background-position:105% 110%; 
             background-image:url(/static/images/bm-500.png);
+}
+
+#coin div.l1 {
+    background-position: 1000px -200px; 
 }
 
 footer {
@@ -198,6 +202,33 @@ span.trans {
     max-height: 24px;
 }
 
+#coin {
+    display: block;
+    position:relative;
+    height: 100%;
+    width:100vw;
+    padding: 200px
+
+}
+
+#coin div {
+    border: 0px solid white;
+    height: 100%;
+}
+
+.col1, .col2 {
+    height: 100%;
+    
+}
+
+.col1 p {
+    text-align: justify;
+    padding: ;
+    font-family: 'nexa_lightregular';
+}
+
+
+
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {
@@ -224,7 +255,7 @@ span.trans {
 @media only screen and (max-width: 650px) {
   .jumbotron {
     font-size: 1.5em; 
-    padding: 200px 1em 1em 1em ;
+    padding: 200px 1em 1em ;
     
 }
 }
