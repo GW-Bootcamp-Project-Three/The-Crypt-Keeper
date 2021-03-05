@@ -8,4 +8,12 @@
         </div>
     </div>
    
+    <script>
+        $(function () {
+                $(document).scroll(function () {
+                    var $nav = $(".navbar");
+                    $nav.toggleClass('ckOrange', $(this).scrollTop() > $nav.height());
+                });
+            });
+    </script>
 </footer>
