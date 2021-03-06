@@ -5,163 +5,132 @@
     <title>About</title>
 
     {% include'head.html' %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
 
     <!-- Navbar (sit on top) -->
     {% include'nav.html' %}
-
+ 
     <!-- Main Body -->
     <div class="ckOrange contianer-fluid" id="coin">
         <!-- Overlays -->
-        <div class="absolute-wrapper layer l1 "></div>
-        <div class="absolute-wrapper layer l2"></div>
+ 
         <div class="container">
            <div class='row'>
                 <div class='col-lg-4 ckOrange col1'>
-                    <div class='row'>
-                        <h1>COIN</h1>
+                    <div class='row'> 
+                        <h1>{{coin_view[0].CoinName}} ({{coin_view[0].TokenName}})</h1> 
                     </div>
-                    <div class='row'>
-                        <h4>About</h4>
-                        <p>The live Bitcoin price today is $48,092.04 USD with a 24-hour trading volume of $53,169,085,336 USD. Bitcoin is down
-                        4.70% in the last 24 hours. The current CoinMarketCap ranking is #1, with a live market cap of $896,664,874,058 USD. It
-                        has a circulating supply of 18,644,768 BTC coins and a max. supply of 21,000,000 BTC coins.</p>
+                    <div class='row'> 
+                        
+                        <img src="{{coin_view[0].TokenLogo}}" style="max-height:34px;">
+                        <br>
+                        <p>{{coin_view[0].About}}</p>
                     </div>
                 </div>
-                <div class='col-lg-8 ckOrange col2'>
-                    <h3>Coin stuff</h3>
+                <div class='col-lg-8 ckOrange col2' id="plot" style="position:relative;z-index:99;"> 
+                    <div >
+                        
+                        
+                    </div> 
                 </div>
-           </div>
-
-        </div>
+           </div> 
+        </div> 
     </div>
+<script>
+    function unpack(rows, key) {
+        return rows.map(function (row) {
+            return row[key];
+        });
+    }
 
-    <!--
-    <div class="ckDarkGray contianer-fluid" id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 ckLightGray">
-                    <h3>Our Mission</h3>
-                    <p>The Crypt-Keepers is the one stop place for all cryptocurrency needs, whether you are a newcomer
-                        or experienced, we got you covered! Our team is full of highly advanced data scientists
-                        who provide the most updated data out there, just for you!</br>
-                        </br>
-                        Company features:</br>
-                        <li>Use our search feature to decide where you want to invest next! </li></br>
-                        <li>Feeling lost and need some guidance? Cryptocurrency for Dummies is the place for you! </li>
-                        </br>
-                        <li>Curious about the most popular cryptocurrencies on the market? Check our our Top 10
-                            Comparison page! </li></br>
-                        <li>Interested in becoming a crypt-keeper yourself? Take our survey and join the fun! </li></br>
-                    </p>
-                </div>
-                <h3>Meet the Team</h3>
-                <div class="row">
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="des" style="width:100%">
-                            <div class="container">
-                                <h4>Desiree Herschberger</h4>
-                                <p class="title">Database Administrator</p>
-                                <p><a href="https://github.com/citizendez/" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="redeat" style="width:100%">
-                            <div class="container">
-                                <h4>Redeat Bekele</h4>
-                                <p class="title">Visualizations and Project Management</p>
-                                <p><a href="https://github.com/redeat17/" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="billy" style="width:100%">
-                            <div class="container">
-                                <h4>William Pappas</h4>
-                                <p class="title">Web Scraping</p>
-                                <p><a href="https://github.com/wjpappa5/" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="thomas" style="width:100%">
-                            <div class="container">
-                                <h4>Thomas Keane</h4>
-                                <p class="title">Machine Learning</p>
-                                <p><a href="https://github.com/" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="henry" style="width:100%">
-                            <div class="container">
-                                <h4>Henry Tran</h4>
-                                <p class="title">Machine Learning</p>
-                                <p><a href="https://github.com/" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="tass" style="width:100%">
-                            <div class="container">
-                                <h4>Taslemun Nahar</h4>
-                                <p class="title">Research and Social Media</p>
-                                <p><a href="https://github.com/tnahar/" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="card">
-                            <img src="img1.jpg" alt="sveena" style="width:100%">
-                            <div class="container">
-                                <h4>Sveena Sharma</h4>
-                                <p class="title">Web Development</p>
-                                <p><a href="https://github.com/sveenasharma" target="_blank"><button
-                                            class="w3-button w3-light-grey w3-block"><i class="fa fa-github"></i>
-                                            Portfolio</button></a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>-->
-    </div>
+    function plotloader(data) {
 
 
+        var frames = []
+        var x = unpack(data, 'RecordDateNormalized')
+        var y = unpack(data, 'High')
+        var x2 = unpack(data, 'RecordDateNormalized')
+        var y2 = unpack(data, 'Low')
+        var max = x.length;
+        for (var i = 0; i < max; i++) {
+            frames[i] = { data: [{ x: [], y: [] }, { x: [], y: [] }] }
+            frames[i].data[1].x = x.slice(0, i + 1);
+            frames[i].data[1].y = y.slice(0, i + 1);
+            frames[i].data[0].x = x2.slice(0, i + 1);
+            frames[i].data[0].y = y2.slice(0, i + 1);
+        }
+
+        var trace2 = {
+            type: "scatter",
+            mode: "lines",
+            name: 'High',
+            fill: 'tonexty',
+            x: frames[max - 1].data[1].x,
+            y: frames[max - 1].data[1].y,
+            line: { color: 'rgba(255,255,255,1)' }
+        }
+
+        var trace1 = {
+            type: "scatter",
+            mode: "lines",
+            name: 'Low',
+            x: frames[max - 1].data[0].x,
+            y: frames[max - 1].data[0].y,
+            line: { color: 'rgba(255,255,255,.2)' }
+        }
+
+        var data = [trace1, trace2];
+
+        var layout = {
+            plot_bgcolor: 'rgba(0,0,0,.0)',
+            paper_bgcolor: "rgba(0,0,0,0)",
+            title: 'Market Data',
+            transition: { duration: 1000, },
+            xaxis: {
+                range: [frames[max - 1].data[0].x[0], frames[max - 1].data[0].x[max - 1]],
+                showgrid: false,
+                autorange: true,
+                nticks: '12',
+                tickangle: '25',
+                tickfont: {
+                    family: 'tahoma', size: 11,  color: '#fff'
+                },
+            },
+            yaxis: {
+                range: [0, frames[max - 1].data[1].x[max - 1]],
+                showgrid: false,
+                tickfont: {
+                    family: 'tahoma', size: 14, color: '#fff'
+                },
+            },
+            legend: {
+                orientation: 'h',  x: 0.5, y: 1.2,  xanchor: 'center'
+            } 
+        };
+        //console.log(trace1);
+        //  return; 
+        Plotly.newPlot('plot', data, layout).then(function () {
+            Plotly.addFrames('plot', frames);
+        });
+    }
+    function init() {
+        d3.json('/api/view/vwCoinHistory/TokenName/{{coin_view[0].TokenName}}').then((data) => {
+            var pagedata = d3.select('#page-data');
+            pagedata.attr('value', JSON.stringify(data));
+            plotloader(data);
+        });
+    };
+    init();
+
+</script>
     <!-- Footer -->
     {% include'footer.html' %}
 
 
-
+{{coin_view[0] }}
 </body>
-
+<input type="hidden" id="page_data" name="page_data" value="" />
 </html>
