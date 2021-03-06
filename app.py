@@ -81,6 +81,7 @@ def get_title(query):
     resp = make_response(_json)
     resp.headers['content-type'] = 'application/json'
     return resp
+
  
 
 ########################
@@ -93,7 +94,17 @@ def get_db_view(db_view_name):
     resp = make_response(_json)
     resp.headers['content-type'] = 'application/json'  
     return resp
- 
+
+@app.route("/api/view/<db_view_name>/<key>/<val>") 
+def get_db_view_kv(db_view_name, key, val):  
+    print(key + ' ' +  val)
+    df = get_dataframe_from_db(db_view_name)
+    df = df.loc[ df[key] == val  ]
+    _json = df.to_json(orient='records')
+    resp = make_response(_json)
+    resp.headers['content-type'] = 'application/json'  
+    return resp
+
 
 @app.route("/surveyview")
 def surveyview():
