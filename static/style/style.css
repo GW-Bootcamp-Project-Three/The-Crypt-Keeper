@@ -237,6 +237,13 @@ span.trans {
  .coinsearch-results  a{
     color:#fff !important; 
  }
+ #coinsearch{
+    display: block;
+    position:relative;
+    height: 100%;
+    width:100vw;
+    padding: 200px 5% 2% 5%;
+ }
 
 /*Media Query */
 @media only screen and (min-width: 1200px) {

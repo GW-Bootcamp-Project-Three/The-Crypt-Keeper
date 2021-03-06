@@ -8,8 +8,7 @@ inputBox.on('keyup', displayResults);
 function init() {
     d3.json('/api/view/vwCoins').then((data) => { 
         //createHeaders(data);
-        var pagedata = d3.select('#page-data');
-        
+        var pagedata = d3.select('#page-data'); 
         pagedata.attr('value', JSON.stringify(data));
         displayResults();  
     })
