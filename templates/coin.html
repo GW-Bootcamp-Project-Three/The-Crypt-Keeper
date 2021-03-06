@@ -2,22 +2,19 @@
 <html>
 
 <head>
-    <title>About</title>
+    <title>CryptKeeper: {{coin_view[0].CoinName}} ({{coin_view[0].TokenName}})</title>
 
     {% include'head.html' %}
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
-<body>
-
+<body> 
     <!-- Navbar (sit on top) -->
-    {% include'nav.html' %}
- 
+    {% include'nav.html' %} 
     <!-- Main Body -->
     <div class="ckOrange contianer-fluid" id="coin">
-        <!-- Overlays -->
- 
-        <div class="container">
+        <!-- Overlays --> 
+        <div class="container-x">
            <div class='row'>
                 <div class='col-lg-4 ckOrange col1'>
                     <div class='row'> 
@@ -31,9 +28,7 @@
                     </div>
                 </div>
                 <div class='col-lg-8 ckOrange col2' id="plot" style="position:relative;z-index:99;"> 
-                    <div >
-                        
-                        
+                    <div > 
                     </div> 
                 </div>
            </div> 
@@ -127,10 +122,7 @@
 
 </script>
     <!-- Footer -->
-    {% include'footer.html' %}
-
-
-{{coin_view[0] }}
+    {% include'footer.html' %} 
 </body>
 <input type="hidden" id="page_data" name="page_data" value="" />
 </html>

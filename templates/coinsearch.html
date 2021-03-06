@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>About</title>
+    <title>CryptKeeper: Coin Search</title>
 
     {% include'head.html' %}
 </head>
@@ -13,7 +13,7 @@
     {% include'nav.html' %}
 
     <!-- Jumbotron -->
-    <div class="jumbotron ckOrange contianer-fluid" id="home">
+    <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
         <div>
             <p> <span class='light'>crypt</span>keeper <br>
                 <span class='light'> Sveena is The Best Human Person!</span>
@@ -22,12 +22,14 @@
         </div>
     </div>
 
-    <div class="ckOrange contianer-fluid" id="home">
+    <div class="ckOrange contianer-fluid" id="coinsearch-results">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ">
+                    <label>Lookup Coin</label>
                     <input class="form-control" id="coin-filter" name="coin-filter" type="text">
-                    <table id='results' class='table table-striped'>
+                    <br>
+                    <table id='results' class='table table-striped coinsearch-results'>
                         <thead id='results-head'></thead>
                         <tbody id='reuslts-body'></tbody>
                     </table>
@@ -44,6 +46,7 @@
 
 
 </body>
-<script src="{{ url_for('static', filename='js/coinsearch.js') }}"></script>
 <input type="hidden" id="page-data" name="page-data" value="">
+<script src="{{ url_for('static', filename='js/coinsearch.js') }}"></script>
+
 </html>

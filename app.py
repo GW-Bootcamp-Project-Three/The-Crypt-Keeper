@@ -55,10 +55,11 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/coin/<token>", methods=['GET', 'POST'])
-def coin(token):
+@app.route("/coin/<int:coinid>", methods=['GET', 'POST'])
+def coin(coinid):
+    print(coinid)
     df = get_dataframe_from_db('vwCoins')
-    df = df.loc[df['TokenName'] == token] 
+    df = df.loc[df['CoinID'] == coinid]
     return render_template("coin.html", coin_view=df.to_dict(orient='records'))
 
 
