@@ -244,7 +244,26 @@ span.trans {
     width:100vw;
     padding: 200px 5% 2% 5%;
  }
-
+.circ-logo-wrapper{ 
+    text-align:center;
+    position:relative;
+    width:100%
+}
+.circ-logo-wrapper img{
+    background-color:#fff;
+       padding:2em; 
+       border-radius:50%;
+    display: block;
+    position:relative;
+    max-height:200px;
+    margin:-70px auto 0px auto;
+}
+#coin-detail{
+    min-height:50vh;
+    background-color:#fff; 
+    font-family:'nexa_lightregular';
+    text-align:center;
+}
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {

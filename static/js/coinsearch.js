@@ -28,7 +28,7 @@ function createHeaders(transactions) {
 //Function: displayResults
 function displayResults() {
     let coins = JSON.parse(d3.select('#page-data').property('value'));
-    console.log(coins);
+    //console.log(coins);
     //get value property in input element
     var inputValue = inputBox.property('value');
     
@@ -37,7 +37,10 @@ function displayResults() {
 
     //use form input to filter data
     if (inputValue != "") {
-        filterData = filterData.filter(coin => coin.CoinName.toUpperCase().includes(inputValue.toUpperCase()));
+        filterData = filterData.filter(
+            coin => coin.CoinName.toUpperCase().includes(inputValue.toUpperCase()) 
+            || coin.TokenName.toUpperCase().includes(inputValue.toUpperCase())
+            );
     } 
     var tbody = d3.select('#reuslts-body');
     tbody.html('') 
