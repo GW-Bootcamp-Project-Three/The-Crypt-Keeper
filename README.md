@@ -15,9 +15,15 @@ The app is deployed in Heroku in order to access the page click the following li
 https://crypt-keeper.herokuapp.com/
 
 The Crypt-Keeper Team Members
+
 Redeat Bekele
+
 Desiree Herschnberger (Des)
+
 Sveena Sharma
+
 Thomas Keane (Tom)
+
 William Pappas (Billy)
+
 Taslemun Nahar (Tas)
