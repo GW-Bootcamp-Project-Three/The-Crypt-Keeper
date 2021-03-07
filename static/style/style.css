@@ -271,6 +271,18 @@ span.trans {
     font-family:'nexa_lightregular';
     text-align:center;
 }
+
+.coinhistory td {
+    padding: 5px 5px;
+    border-bottom: 1px solid #595753;
+    opacity: 85%;
+
+}
+
+.coinhistory {
+    width: 100%;
+}
+
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {

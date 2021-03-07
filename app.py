@@ -60,7 +60,9 @@ def coin(coinid):
     print(coinid)
     df = get_dataframe_from_db('vwCoins')
     df = df.loc[df['CoinID'] == coinid]
-    return render_template("coin.html", coin_view=df.to_dict(orient='records'))
+    dfh = get_dataframe_from_db('vwCoinHistory')
+    dfh = dfh.loc[dfh['CoinID'] == coinid]
+    return render_template("coin.html", coin_view=df.to_dict(orient='records'), coin_history=dfh.to_dict(orient='records'))
 
 
 @app.route("/learn", methods=['GET', 'POST'])

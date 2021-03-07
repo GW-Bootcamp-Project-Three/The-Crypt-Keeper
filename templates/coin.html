@@ -34,7 +34,34 @@
             <div class='row'>
                 <div class='col-lg-12 '>
                     <h2>{{coin_view[0].CoinName}} ({{coin_view[0].TokenName}})</h2>
-                    <p>{{coin_view[0].About}}</p>
+                    <!-- <p>{{coin_view[0].About}}</p> -->
+                    <h3>History</h3>
+                    <table id='results' class='coinhistory'> 
+                        <thead id='results-head'>
+                            <th>Date</th>
+                            <!-- <th>Circulation Supply</th> -->
+                            <th>Price</th>
+                            <th>Low</th>
+                            <th>High</th>
+                            <th>Closing Price</th>
+                            <th>Adjusted Close</th>
+                            <th>Volume</th>
+                        </thead>
+                        <tbody id='reuslts-body'>
+                            {% for record in coin_history %}
+                            <tr>
+                                <td>{{record.RecordDate}}</td>
+                                <!-- <td>{{record.CirculationSupply}}</td> -->
+                                <td>{{record.OpenPrice}}</td>
+                                <td>{{record.High}}</td>
+                                <td>{{record.Low}}</td>
+                                <td>{{record.ClosingPrice}}</td>
+                                <td>{{record.AdjClose}}</td>
+                                <td>{{record.Volume}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div> 
             </div> 
         </div>
@@ -61,6 +88,8 @@
         };
         init();
 
+
+
     </script>
     <!-- Footer -->
     {% include'footer.html' %} 
@@ -68,3 +97,8 @@
 <input type="hidden" id="page-data" name="page-data" value="">
 <script src="{{ url_for('static', filename='js/coin.js') }}"></script>
 </html>
+
+
+<!-- {{coin_history}} -->
+
+    
