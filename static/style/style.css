@@ -258,6 +258,13 @@ span.trans {
     max-height:200px;
     margin:-70px auto 0px auto;
 }
+
+.coinsearch-results img {
+    background-color:#fff;
+       padding:.25em; 
+       border-radius:50%;
+}
+
 #coin-detail{
     min-height:50vh;
     background-color:#fff; 

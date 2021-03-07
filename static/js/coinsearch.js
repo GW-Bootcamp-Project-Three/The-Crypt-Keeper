@@ -7,7 +7,7 @@ inputBox.on('keyup', displayResults);
 
 function init() {
     d3.json('/api/view/vwCoins').then((data) => { 
-        //createHeaders(data);
+        createHeaders();
         var pagedata = d3.select('#page-data'); 
         pagedata.attr('value', JSON.stringify(data));
         displayResults();  
@@ -15,13 +15,14 @@ function init() {
  
 };
 init() ;
-function createHeaders(transactions) {
+function createHeaders() {
     var tableHead = d3.select('#results-head');
     tableHead.html('');
-    var tran = transactions[0];
-    Object.keys(tran).forEach(key => {
+    let ColHeads = ['For More Info', ' ', 'Coin', 'Symbol', 'Price', 'High', 'Low', 'Closing Price', 'Adjusted Close', 'Volume']
+    ColHeads.forEach(item => {
         var cell = tableHead.append('th');
-        cell.text(key);
+        cell.text(item);
+
     })
 }
 
@@ -50,22 +51,37 @@ function displayResults() {
         var hrf = cell.append('a');
         hrf.attr("href", "/coin/" + coin['CoinID']);
         hrf.attr('style', "color:#fff;")
-        hrf.text(`[ VIEW MORE ]`);
-        Object.entries(coin).forEach(([key, value]) => {
-            if (key == 'TokenLogo') {
-                var cell = row.append('td');
-                var img = cell.append('img');
-                img.attr('src', value) 
-                //cell.text(value);
-            }
-            if (key == 'CoinName'){
-                var cell = row.append('td');  
-                cell.text(value);
-            }
-            if (key == 'TokenName') {
-                var cell = row.append('td');
-                cell.text(value);
-            } 
-        }); 
+        hrf.text(`[ CLICK HERE ]`);
+
+        var cell = row.append('td');
+        var img = cell.append('img');
+        img.attr('src', coin['TokenLogo']);
+
+        var cell = row.append('td');
+        cell.text(coin['CoinName']);
+
+        var cell = row.append('td');
+        cell.text(coin['TokenName']);
+        
+        var cell = row.append('td');
+        cell.text(coin['OpenPrice']);
+
+        var cell = row.append('td');
+        cell.text(coin['High']);
+
+        var cell = row.append('td');
+        cell.text(coin['Low']);
+
+        var cell = row.append('td');
+        cell.text(coin['ClosingPrice']);
+
+        var cell = row.append('td');
+        cell.text(coin['AdjClose']);
+
+        var cell = row.append('td');
+        cell.text(coin['Volume']);
+
+        var cell = row.append('td');
+        cell.attr('id', coin['TokenName']);
     }); 
 }
