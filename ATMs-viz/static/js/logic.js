@@ -1,42 +1,57 @@
 
+var map;
+var markers = L.markerClusterGroup();
 
 d3.json("static/js/ATM.json", function(data) {
     //console.log(data);
     do_map(data);
-});
-var markers = L.markerClusterGroup();
-function do_map(data){
-    geojsonFeature=data;
-    // Create a map object
-    var myMap = L.map("map", {
-        center: [37.697, -97.314],
-        zoom: 7
-    });
-    L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-        tileSize: 512,
-        maxZoom: 18,
-        zoomOffset: -1,
-        id: "mapbox/streets-v11",
-        accessToken: API_KEY
-    }).addTo(myMap);
 
-    geojsonFeature.forEach(feature => { 
-        var lat = feature.geometry.coordinates[0];
-        var long = feature.geometry.coordinates[1];
-        var cord = [long, lat]; 
+    document.getElementById('zipCodeFilterSearchButton').addEventListener('click', function() {
+        var searchedZipCode = document.getElementById('zipCodeFilterInput').value;
+        filterAndReAddMarkers(data, searchedZipCode)
+    });
+});
+
+function addMarkers(data, map, zipCodeForFiltering) {
+    for (var i = 0; i < data.length; i++) {
+        var feature = data[i]
+        var Properties = feature.Properties;
+        var zipCode = Properties['Zip Code'];
+
+        if(zipCodeForFiltering && zipCodeForFiltering !== zipCode) {
+            continue;
+        }
+
+        var geometry = feature.geometry;
+        var lng = geometry.coordinates[0];
+        var lat = geometry.coordinates[1];
+        var title = Properties.Name;
+        var marker = L.marker(new L.LatLng(lat, lng), { title: title });
         color_orange = 'rgb(250,110,50)';
         color_blue = 'rgb(10,60,80)';
         color_grey = 'rgb(90,90,90)';  
-        L.circle(cord, {
-            fillOpacity: 0.75,
-            color: "white",
-            fillColor: color_orange,
-            // Adjust radius
-            radius: 2 * 7000
-    }).bindPopup(`<h3>${feature.Properties.Address}</h3><hr>${(feature.Properties.Name)}<hr>${(feature.Properties.Hours)}`).addTo(myMap);
-    myMap.addLayer(markers);
-});
+        marker
+        .bindPopup(`<h3>${feature.Properties.Address}</h3><hr>${(feature.Properties.Name)}<hr>${(feature.Properties.Hours)}`);
 
+        markers.addLayer(marker);
+    }
 
+    map.addLayer(markers);
 }
-  
+
+function filterAndReAddMarkers(data, searchedZipCode) {
+    markers.clearLayers();
+    addMarkers(data, map, searchedZipCode);
+}
+
+function do_map(data, zipCodeForFiltering = null){
+    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+    }),
+    latlng = L.latLng(37.697, -97.314);
+
+    map = L.map('map', {center: latlng, zoom: 6, layers: [tiles]});
+
+    addMarkers(data, map);
+}
