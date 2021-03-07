@@ -58,7 +58,7 @@ def view_exists(db_view_name):
 def get_dataframe_from_db(db_view_name):
     conn = engine.connect()
     if not view_exists(db_view_name):
-        return 'db view object not found / invalid' 
+        return pd.DataFrame([{'err':'view does not exist'}])
     sql = f''' SELECT * FROM {db_view_name}'''
     df = pd.read_sql(sql, con=conn)
     conn.close()

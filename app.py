@@ -55,10 +55,12 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/coin", methods=['GET', 'POST'])
-def coin():
-
-    return render_template("coin.html")
+@app.route("/coin/<int:coinid>", methods=['GET', 'POST'])
+def coin(coinid):
+    print(coinid)
+    df = get_dataframe_from_db('vwCoins')
+    df = df.loc[df['CoinID'] == coinid]
+    return render_template("coin.html", coin_view=df.to_dict(orient='records'))
 
 
 @app.route("/learn", methods=['GET', 'POST'])
@@ -70,20 +72,7 @@ def learn():
 def coinsearch():
     return render_template("coinsearch.html", accessToken=accessToken)
 
-
-@app.route("/api/lookup/<query>")
-def get_title(query):
-    if query == '':
-        query = "nothing"
-    df = lookup(query)
-    _json = df.to_json(orient='records', default_handler=str) 
-    #print(_json) 
-    resp = make_response(_json)
-    resp.headers['content-type'] = 'application/json'
-    return resp
-
  
-
 ########################
 ## GET DATA FROM DB RETURN JSON
 @app.route("/api/view/<db_view_name>") 
@@ -94,7 +83,16 @@ def get_db_view(db_view_name):
     resp = make_response(_json)
     resp.headers['content-type'] = 'application/json'  
     return resp
- 
+
+@app.route("/api/view/<db_view_name>/<key>/<val>") 
+def get_db_view_kv(db_view_name, key, val):   
+    df = get_dataframe_from_db(db_view_name)
+    df = df.loc[ df[key] == val  ]
+    _json = df.to_json(orient='records')
+    resp = make_response(_json)
+    resp.headers['content-type'] = 'application/json'  
+    return resp
+
 
 @app.route("/surveyview")
 def surveyview():
