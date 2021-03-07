@@ -259,6 +259,12 @@ span.trans {
     margin:-70px auto 0px auto;
 }
 
+.circ-logo-wrapper img.pagebm {
+    max-height: 100px;
+    padding: 10px;
+    margin:-20px auto 0px auto;
+} 
+
 .coinsearch-results img {
     background-color:#fff;
        padding:.25em; 
@@ -274,13 +280,22 @@ span.trans {
 
 .coinhistory td {
     padding: 5px 5px;
-    border-bottom: 1px solid #595753;
+    border-bottom: 2px solid #595753;
     opacity: 85%;
 
 }
 
+#coin-detail h3 {
+    color: #595753;
+}
+
 .coinhistory {
     width: 100%;
+    color: #595753;
+}
+
+#about {
+    color: #595753;
 }
 
 /*Media Query */
