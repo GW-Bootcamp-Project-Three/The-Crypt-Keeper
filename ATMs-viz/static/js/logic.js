@@ -1,9 +1,16 @@
 
-let features = geojsonFeature; 
+
+d3.json("static/js/ATM.json", function(data) {
+    //console.log(data);
+    do_map(data);
+});
+var markers = L.markerClusterGroup();
+function do_map(data){
+    geojsonFeature=data;
     // Create a map object
-    var myMap = L.map("mapid", {
-        center: [41.850033, -87.6500523],
-        zoom: 4
+    var myMap = L.map("map", {
+        center: [37.697, -97.314],
+        zoom: 7
     });
     L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         tileSize: 512,
@@ -12,7 +19,8 @@ let features = geojsonFeature;
         id: "mapbox/streets-v11",
         accessToken: API_KEY
     }).addTo(myMap);
-    features.forEach(feature => { 
+
+    geojsonFeature.forEach(feature => { 
         var lat = feature.geometry.coordinates[0];
         var long = feature.geometry.coordinates[1];
         var cord = [long, lat]; 
@@ -24,38 +32,11 @@ let features = geojsonFeature;
             color: "white",
             fillColor: color_orange,
             // Adjust radius
-            radius: 2 * 70000
-        }).bindPopup(`<h3>${feature.properties.Address}</h3><hr>${new Date(feature.properties.Name)}`).addTo(myMap);
-    });
+            radius: 2 * 7000
+    }).bindPopup(`<h3>${feature.Properties.Address}</h3><hr>${(feature.Properties.Name)}<hr>${(feature.Properties.Hours)}`).addTo(myMap);
+    myMap.addLayer(markers);
+});
 
 
-// Grab the data with d3
-// d3.ATMs.js(Locations, function(response) {
-
-//   console.log(response);
-//   // Create a new marker cluster group
-//   var markers = L.markerClusterGroup();
-
-//   // Loop through data
-//   for (var i = 0; i < response.length; i++) {
-
-//     // Set the data location property to a variable
-//     var lat = response[i].Latitude;
-//     var lng = response[i].Longitude;
-
-//     console.log(lat);
-//     console.log(lng);
-
-
-//     // Add a new marker to the cluster group and bind a pop-up
-//     if(lat && lng) {
-//       markers.addLayer(L.marker([lat, lng])
-//         .bindPopup("<h1 style='text-align:center;'>" + response[i].Name + "</h1> <hr> <h2 style='text-align:center;'>" + response[i].Address + "</h2>"));
-//     }
-
-//   }
-
-//   // Add our marker cluster layer to the map
-//   myMap.addLayer(markers);
-
-// });
+}
+  
