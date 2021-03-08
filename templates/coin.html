@@ -29,7 +29,13 @@
        
     </div>
     <div class="container-fluid" id="coin-detail">
-        <div class=" circ-logo-wrapper "><img src="{{coin_view[0].TokenLogo}}"></div>
+        <div class=" circ-logo-wrapper">
+            {% if coin_view[0].TokenLogo == ''%}
+            <img src="/static/images/bm-o-125.png">
+            {% else %}
+            <img src="{{coin_view[0].TokenLogo}}">
+            {% endif %}
+        </div>
         <div class=" container " >
             <div class='row'>
                 <div class='col-lg-12 '>

@@ -53,9 +53,13 @@ function displayResults() {
         hrf.attr('style', "color:#fff;")
         hrf.text(`[ CLICK HERE ]`);
 
+        let imgsrc = coin['TokenLogo'];
+        if (imgsrc == ""){
+            imgsrc = 'static/images/bm-o-125.png'
+        };
         var cell = row.append('td');
         var img = cell.append('img');
-        img.attr('src', coin['TokenLogo']);
+        img.attr('src', imgsrc);
 
         var cell = row.append('td');
         cell.text(coin['CoinName']);
