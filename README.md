@@ -10,7 +10,7 @@ Use our search feature to decide where you want to invest next!
 Feeling lost and need some guidance? Cryptocurrency 101 is the place for you! 
 <img width="1081" alt="Screen Shot 2021-03-07 at 8 43 32 PM" src="https://user-images.githubusercontent.com/71414243/110264096-75955c00-7f86-11eb-8abd-bf6796e17ad7.png">
 
-Our team has built a loop-up feauture on most of the popular cryptocurrency. 
+Our team has built a look-up feauture on most of the popular cryptocurrency. 
 <img width="1020" alt="Screen Shot 2021-03-07 at 8 43 50 PM" src="https://user-images.githubusercontent.com/71414243/110264131-8cd44980-7f86-11eb-8760-db1c9e732ec3.png">
 
 It also prodives important information regarding the cryptocurrency of your choice to get your mind thinking..
