@@ -302,6 +302,10 @@ span.trans {
     color: #595753;
 }
 
+.dropdown-item {
+    font-size: 16px;
+}
+
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {
