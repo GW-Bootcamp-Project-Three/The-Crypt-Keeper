@@ -7,22 +7,16 @@ The Crypt-Keepers is the one stop place for all cryptocurrency needs, whether yo
 ## Our application features:
 Use our search feature to decide where you want to invest next!
 
-Feeling lost and need some guidance? Cryptocurrency 101 is the place for you!
-
-Curious about the most popular cryptocurrencies on the market? Check our our Top 10 Comparison page!
-
-Interested in becoming a crypt-keeper yourself? Take our survey and join the fun and stay updated!
-
-crypto 101
+Feeling lost and need some guidance? Cryptocurrency 101 is the place for you! 
 <img width="1081" alt="Screen Shot 2021-03-07 at 8 43 32 PM" src="https://user-images.githubusercontent.com/71414243/110264096-75955c00-7f86-11eb-8abd-bf6796e17ad7.png">
 
-lookup
+Our team has built a loop-up feauture on most of the popular cryptocurrency. 
 <img width="1020" alt="Screen Shot 2021-03-07 at 8 43 50 PM" src="https://user-images.githubusercontent.com/71414243/110264131-8cd44980-7f86-11eb-8760-db1c9e732ec3.png">
 
-bitcoin info
+It also prodives important information regarding the cryptocurrency of your choice to get your mind thinking..
 <img width="1303" alt="Screen Shot 2021-03-07 at 8 44 21 PM" src="https://user-images.githubusercontent.com/71414243/110264180-abd2db80-7f86-11eb-8b6c-54aae56f376c.png">
 
-comparison
+Curious about the most popular cryptocurrencies on the market? Check our our Top 10 Comparison page!
 <img width="967" alt="Screen Shot 2021-03-07 at 8 44 38 PM" src="https://user-images.githubusercontent.com/71414243/110264206-c1480580-7f86-11eb-8d1d-e08e538fe20e.png">
 
 ## Deployment
