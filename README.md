@@ -1,4 +1,5 @@
 # The-Crypt-Keeper
+<img width="1433" alt="Screen Shot 2021-03-07 at 8 43 11 PM" src="https://user-images.githubusercontent.com/71414243/110264019-4979db00-7f86-11eb-847a-584f1efa360d.png">
 
 ## Our Mission
 The Crypt-Keepers is the one stop place for all cryptocurrency needs, whether you are a newcomer or experienced, we got you covered! Our team is full of highly advanced data scientists who provide the most updated data out there, just for you! We have created an application that can help guide you to the right cryptocurrency that will fit all our requirments. Cryptocurrency can be a bit of a challenge to understand the whole aspect of digital money however, we have broken it down into simplier terms. 
