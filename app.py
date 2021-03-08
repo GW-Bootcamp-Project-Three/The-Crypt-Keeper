@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import requests
 import pymysql
 import pymongo
 import sqlalchemy
@@ -30,10 +31,11 @@ if is_heroku == True:
     remote_db_user = os.environ.get('remote_db_user')
     remote_db_pwd = os.environ.get('remote_db_pwd')
     accessToken = os.environ.get('accessToken')
+    market_API = os.environ.get('market_API')
     
 else:
     # use the config.py file if IS_HEROKU is not detected
-    from config import mongoConn, remote_db_endpoint, remote_db_port, remote_db_name, remote_db_user, remote_db_pwd, accessToken
+    from config import mongoConn, remote_db_endpoint, remote_db_port, remote_db_name, remote_db_user, remote_db_pwd, accessToken, market_API
 # # # # # # # # # # # # # # # #   
 ## MY SQL CONN 
 pymysql.install_as_MySQLdb() 
@@ -57,12 +59,25 @@ def about():
 
 @app.route("/coin/<int:coinid>", methods=['GET', 'POST'])
 def coin(coinid):
-    print(coinid)
+    # print(coinid)
     df = get_dataframe_from_db('vwCoins')
     df = df.loc[df['CoinID'] == coinid]
+
     dfh = get_dataframe_from_db('vwCoinHistory')
     dfh = dfh.loc[dfh['CoinID'] == coinid]
-    return render_template("coin.html", coin_view=df.to_dict(orient='records'), coin_history=dfh.to_dict(orient='records'))
+  
+    Token = df.iloc[0]['TokenName']
+    url = f"https://api.nomics.com/v1/currencies/ticker?key={market_API}&ids={Token}&interval=1d,7d,30d&per-page=100&page=1"
+    print(url)
+    response = requests.get(url)
+    dfm = pd.DataFrame(response.json())
+
+    return render_template(
+        "coin.html"
+        , coin_view=df.to_dict(orient='records')
+        , coin_history=dfh.to_dict(orient='records')
+        , market_data=dfm.to_dict(orient='records')
+    )
 
 
 @app.route("/learn", methods=['GET', 'POST'])
