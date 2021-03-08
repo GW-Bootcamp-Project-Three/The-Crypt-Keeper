@@ -100,6 +100,11 @@ def get_db_view_kv(db_view_name, key, val):
 def surveyview():
     return render_template("surveyview.html")
 
+
+@app.route("/map")
+def map():
+    return render_template("map.html", accessToken=accessToken)
+
 # run the app in debug mode
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
