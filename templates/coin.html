@@ -55,9 +55,12 @@
                         {% endif %}
                         </p>
 
+                        <div id='coin-barplot'></div>
                     </div>
+
                 </div>
-                <div class='col-lg-8 ckOrange col2' id="plot" style="position:relative;z-index:99;">  
+                <div class='col-lg-8 ckOrange col2' >  
+                    <div id="plot"> </div>
                 </div>
            </div> 
        
@@ -195,6 +198,7 @@
                 var pagedata = d3.select('#page-data');
                 pagedata.attr('value', JSON.stringify(data));
                 plotloader(data);
+                // barplotloader();
             });
         };
         init();
@@ -202,6 +206,10 @@
 
 
     </script>
+ 
+ 
+
+
     <!-- Footer -->
     {% include'footer.html' %} 
 </body>

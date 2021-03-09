@@ -34,30 +34,28 @@
         <p> <span class='light'>Crypt</span>keeper<br>
           <span class='light'>Find a Crypto ATM Near You</span>
         </p>
-        <div id="searchArea">
-          <input placeholder="Enter a zip code" id="zipCodeFilterInput" />
-          <button id="zipCodeFilterSearchButton">Filter results by zip code</button>
+        <div  id="searchArea">
+          <input class='button 'placeholder="Enter a zip code" id="zipCodeFilterInput" />
+          <button class='button' id="zipCodeFilterSearchButton">Filter results by zip code</button>
         </div>
       </div>
-    </div> 
     
-        <div id="map"></div>
+    </div>
 
-  
+    <div id="map"></div>
+
+    <!-- Marker Cluster JS -->
+    <script type="text/javascript"
+      src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Our JS -->
+    <script type="text/javascript" src="static/js/mapConfig.js"></script>
+    <script type="text/javascript" src="static/js/map.js"></script>
+    
   
 
-
-  <!-- Marker Cluster JS -->
-  <script type="text/javascript"
-    src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
-  
-  <!-- Our JS -->
-  <script type="text/javascript" src="static/js/mapConfig.js"></script>
-  <script type="text/javascript" src="static/js/map.js"></script>
-  
- 
-
-  
+  <!-- Footer -->
+  <!-- {% include'footer.html' %} -->
 </body>
 
 

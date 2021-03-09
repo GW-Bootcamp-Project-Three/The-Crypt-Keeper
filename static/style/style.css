@@ -176,6 +176,11 @@ footer {
     color: #f3723a;
 }
 
+#searchArea {
+    position: relative;
+    padding-bottom: 1em;
+}
+
 .block-center {
     position: relative;
     margin: 0px auto;

@@ -81,7 +81,7 @@ function plotloader(data) {
                 args: [null, {
                     fromcurrent: true,
                     transition: {
-                        duration: 0,
+                        duration: 1,
                     },
                     frame: {
                         duration: 40,
@@ -112,8 +112,11 @@ function plotloader(data) {
     //  return; 
     Plotly.newPlot('plot', data, layout, { displayModeBar: false }).then(function () {
         Plotly.addFrames('plot', frames);
+    
     });
 }
+
+
 $(document).ready(function () {
     var element = $('.updatemenu-button  rect .updatemenu-item-rect')
     element.trigger('click');
@@ -122,3 +125,32 @@ $(document).ready(function () {
 
     // $('#navbarDropdown').trigger('click');
 });
+
+
+// function barplotloader() {
+//     var trace1 = {
+//         x: ['giraffes', 'orangutans', 'monkeys'],
+//         y: [20, 14, 23],
+//         name: 'SF Zoo',
+//         type: 'bar'
+//     };
+
+//     var trace2 = {
+//         x: ['giraffes', 'orangutans', 'monkeys'],
+//         y: [12, 18, 29],
+//         name: 'LA Zoo',
+//         type: 'bar'
+//     };
+
+//     var data = [trace1, trace2];
+
+//     var layout = { 
+//         barmode: 'group', 
+//         autosize: true,
+//         plot_bgcolor: 'rgba(0,0,0,.0)',
+//         paper_bgcolor: "rgba(0,0,0,0)",
+//         title: 'Historical Price Data',
+//     };
+
+//     Plotly.newPlot('coin-barplot', data, layout);
+// }

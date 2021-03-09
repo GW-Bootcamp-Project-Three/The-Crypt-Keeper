@@ -11,6 +11,7 @@ import re
 from collections import Counter
 import plotly.express as px
 from plotly import graph_objects as go
+from plotly.tools import FigureFactory as FF
 from CK_dbFunctions import view_exists, get_dataframe_from_db
 
 app = Flask(__name__)  
