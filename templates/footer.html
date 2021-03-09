@@ -25,29 +25,31 @@
 <script src="{{ url_for('static', filename='js/config.js') }}"></script>
 
 <script>
+    function get_ticker(){
+        d3.json(`https://api.nomics.com/v1/currencies/ticker?key=${market_API}&ids=BTC,%20XRP,%20ETH&per-page=100&page=1`).then((data) => {
+            let HTML = '';
+            data.forEach(element => {
+                //console.log(element)
+                let currency = element.currency;
+                let image = element.logo_url;
+                let price = element.price;
+                // console.log(image);
+                HTML += `<div class='col-md-3'>`
+                HTML += `<img src='${image}'/>`
+                HTML += `<span>${currency}</span>`
+                HTML += `<span>${price}</span>`
+                HTML += `</div>`
 
-    d3.json(`https://api.nomics.com/v1/currencies/ticker?key=${market_API}&ids=BTC,%20XRP,%20ETH&per-page=100&page=1`).then((data) => {
-        let HTML='';
-        data.forEach(element => {
-            console.log(element)
-            let currency = element.currency;
-            let image = element.logo_url;
-            let price = element.price;
-            // console.log(image);
-            HTML += `<div class='col-md-3'>`
-            HTML += `<img src='${image}'/>`
-            HTML += `<span>${currency}</span>`
-            HTML += `<span>${price}</span>`
-            HTML += `</div>`
-           
 
 
-            //$('.tickers').append(`<div class='col-md-3'><h6>${element.currency}<h6></div>`)
+                //$('.tickers').append(`<div class='col-md-3'><h6>${element.currency}<h6></div>`)
+            });
+            $('.tickers').append(`${HTML}`)
+            // plotloader(data);
+            // barplotloader();
         });
-        $('.tickers').append(`${HTML}`)
-        // plotloader(data);
-        // barplotloader();
-    });
+    }
+
    
      
 
