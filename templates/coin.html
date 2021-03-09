@@ -6,6 +6,7 @@
 
     {% include'head.html' %}
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <body> 
@@ -36,9 +37,67 @@
             <img src="{{coin_view[0].TokenLogo}}">
             {% endif %}
         </div>
-        <div class=" container " >
+        <div class=" container market-detail" >
+            <h3>Market Data</h3><br>
             <div class='row'>
-                <div class='col-lg-12 '>
+                <div class='col-lg-3 '>
+                    <!-- <h5>Today:</h5> -->
+                    {% if 'status' in market_data[0] %}
+                    <label>Status:</label> {{market_data[0].status}} 
+                    <br><label>Rank:</label> {{market_data[0].rank}} 
+                    <br><label>Number of Exchanges:</label> {{market_data[0].num_exchanges}} 
+                    <br><label>First Trade:</label>  {{market_data[0].first_trade}} 
+                    <br><label>Price:</label> {{market_data[0].price}} 
+                    <br><label>High:</label> {{market_data[0].high}} 
+                <br><label>Circulation Supply:</label> {{market_data[0].circulating_supply}} 
+                    <br><label>Max Supply:</label> {{market_data[0].max_supply}} 
+                    <br><label>Market Cap</label> {{market_data[0].market_cap}} 
+                    {% else %} Data Not Available From API
+                    {% endif %}
+                </div>
+                <div class='col-lg-3 '>
+                    <h5>24 Hours</h5>
+                    {% if '1d' in market_data[0] %}
+                    <label>Volume:</label> {{market_data[0]['1d'].volume}}
+                    <br><label>Price Change:</label> {{market_data[0]['1d'].price_change}}
+                    <br><label>Price % Change:</label> {{market_data[0]['1d'].price_change_pct}} 
+                    <br><label>Volume Change:</label> {{market_data[0]['1d'].volume_change}}
+                    <br><label>Volume % Change:</label> {{market_data[0]['1d'].volume_change_pct}}
+                    <br><label>Market Cap Change:</label> {{market_data[0]['1d'].market_cap_change}}
+                    <br><label>Market Cap % Change:</label> {{market_data[0]['1d'].market_cap_change_pct}}
+                    {% else %} Data Not Available From API
+                    {% endif %}
+                </div>
+                <div class='col-lg-3 '>
+                    <h5>7 Day</h5>
+                    {% if '7d' in market_data[0] %}
+                    <label>Volume:</label> {{market_data[0]['7d'].volume}}
+                    <br><label>Price Change:</label> {{market_data[0]['7d'].price_change}}
+                    <br><label>Price % Change:</label> {{market_data[0]['7d'].price_change_pct}}
+                    <br><label>Volume Change:</label> {{market_data[0]['7d'].volume_change}}
+                    <br><label>Volume % Change:</label>{{market_data[0]['7d'].volume_change_pct}}
+                    <br><label>Market Cap Change:</label> {{market_data[0]['7d'].market_cap_change}}
+                    <br><label>Market Cap % Change:</label> {{market_data[0]['7d'].market_cap_change_pct}}
+                    {% else %} Data Not Available From API
+                    {% endif %}
+                </div>
+                <div class='col-lg-3 '>
+                    <h5>30 Day</h5>
+                    {% if '30d' in market_data[0] %}
+                    <label>Volume:</label> {{market_data[0]['30d'].volume}}
+                <label>Price Change:</label> {{market_data[0]['30d'].price_change}}
+                    <label>Price % Change:</label> {{market_data[0]['30d'].price_change_pct}}
+                    <label>Volume Change:</label> {{market_data[0]['30d'].volume_change}}
+                    <label>Volume % Change:</label> {{market_data[0]['30d'].volume_change_pct}}
+                    <label>Market Cap Change:</label> {{market_data[0]['30d'].market_cap_change}}
+                    <label>Market Cap % Change:</label> {{market_data[0]['30d'].market_cap_change_pct}}
+                    {% else %} Data Not Available
+                    {% endif %}
+                </div>
+          
+            </div>
+            <div class='row'>
+                <div class='col-lg-12 history-data'>
                     <!-- <h2>{{coin_view[0].CoinName}} ({{coin_view[0].TokenName}})</h2> -->
                     <!-- <p>{{coin_view[0].About}}</p> -->
                     <h3>Price History</h3><br>
@@ -105,6 +164,6 @@
 </html>
 
 
-<!-- {{coin_history}} -->
+
 
     

@@ -306,6 +306,20 @@ span.trans {
     font-size: 16px;
 }
 
+.history-data {
+    padding-top: 1.5em;
+}
+
+#coin-detail label {
+    font-weight: bold;
+   
+  
+}
+
+.market-detail {
+    text-align: left;
+}
+
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {
