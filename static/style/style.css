@@ -138,11 +138,11 @@ nav a, nav a:hover {
 
 /*Logo Overlay*/
 div.l1  { 
-            z-index:2 ;
-            opacity:.2;
-            background-repeat: no-repeat;
-            background-position:105% 110%; 
-            background-image:url(/static/images/bm-500.png);
+        z-index:2 ;
+        opacity:.2;
+        background-repeat: no-repeat;
+        background-position:105% 110%; 
+        background-image:url(/static/images/bm-500.png);
 }
 
 #coin div.l1 {

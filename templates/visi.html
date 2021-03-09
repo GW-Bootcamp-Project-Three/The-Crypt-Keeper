@@ -4,129 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+    
 
 </head> 
-<body style="background-color:rgb(250,110,50);">
-  <div class="container-fluid" id="plot"> 
-      
-  </div>
+<body >
+ 
 </body> 
-<input type="hidden" id="page_data" name="page_data" value="" /> 
 
-<script> 
-    function unpack(rows, key) {
-        return rows.map(function(row) { 
-            return row[key]; 
-        });
-    }
+<style>
+#vid{
+    height:1000px;
 
-    function plotloader( data ){
+}
 
-
-        var frames = []
-        var x = unpack(data, 'RecordDate')
-        var y = unpack(data, 'High')
-        var x2 = unpack(data, 'RecordDate')
-        var y2 = unpack(data, 'Low')
-        var max = x.length;
-        for (var i = 0; i < max; i++) {
-            frames[i] = {data: [{x: [], y: []}, {x: [], y: []}]}
-            frames[i].data[1].x = x.slice(0, i+1);
-            frames[i].data[1].y = y.slice(0, i+1);
-            frames[i].data[0].x = x2.slice(0, i+1);
-            frames[i].data[0].y = y2.slice(0, i+1);
-        }
-
-        var trace2 = {
-            type: "scatter",
-            mode: "lines",
-            name: 'High',
-            fill: 'tonexty',
-            x: frames[ max-1 ].data[1].x,
-            y: frames[ max-1 ].data[1].y,
-            line: {color: 'rgba(255,255,255,1)'}
-        }
-
-        var trace1 = {
-            type: "scatter",
-            mode: "lines",
-            name: 'Low',
-            x: frames[ max-1 ].data[0].x,
-            y: frames[ max-1 ].data[0].y,
-            line: {color: 'rgba(255,255,255,.2)'}
-        }
-
-        var data = [trace1,trace2];
-
-        var layout = {
-            plot_bgcolor:'rgba(0,0,0,.0)',
-            paper_bgcolor:"rgba(0,0,0,0)",
-            title: 'Market Data',
-            transition: {  duration: 1000,  },
-            xaxis: {
-                range: [frames[max-1].data[0].x[0], frames[max-1].data[0].x[max-1]],
-                showgrid: false,  
-                autorange:true,
-                nticks  : '12',
-                tickangle: '0',  
-                tickfont: {
-                family: 'nexa_heavyregular',
-                    size: 11, 
-                    color: '#fff'
-                },
-            },
-            yaxis: {
-                range: [0, 60440],
-                showgrid: false,
-                tickfont: {
-                family: 'nexa_blackregular',
-                    size: 14, 
-                    color: '#fff'
-                },
-            },
-            legend: {
-                orientation: 'h',
-                x: 0.5,
-                y: 1.2,
-                xanchor: 'center'
-            },
-            updatemenus: [{
-                x: 0.5,
-                y: 0,
-                yanchor: "top",
-                xanchor: "center",
-                showactive: false,
-                direction: "left",
-                type: "buttons",
-                pad: {"t": 87, "r": 10},
-                buttons: [{
-                    method: "animate",
-                    args: [null, {
-                    fromcurrent: true,
-                    transition: {  duration: 10,  },
-                    frame: {  duration: 10, redraw: false  }
-                }],
-                label: "Play"
-                }]
-            }]
-        };
-        console.log( trace1 );
-        //  return; 
-        Plotly.newPlot('plot', data, layout).then(function() {
-            Plotly.addFrames('plot', frames);
-        }); 
-    } 
-    function init(){
-        d3.json('https://crypt-keeper.herokuapp.com/api/view/vwCoinHistory').then((data) => { 
-            var pagedata = d3.select('#page-data');
-            pagedata.attr('value', JSON.stringify(data));   
-            plotloader(data); 
-        });
-    };
-    init();
-    
-  </script>
-
+</style>
 </html>
