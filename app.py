@@ -90,6 +90,11 @@ def learn():
 def coinsearch():
     return render_template("coinsearch.html", accessToken=accessToken)
 
+
+@app.route("/countries-map", methods=['GET', 'POST'])
+def countries_map():
+
+    return render_template("countries-map.html")
  
 ########################
 ## GET DATA FROM DB RETURN JSON

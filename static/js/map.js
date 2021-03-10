@@ -34,7 +34,7 @@ function addMarkers(data, map, zipCodeForFiltering) {
 
         markers.addLayer(marker);
     }
-
+    map.scrollWheelZoom.disable();
     map.addLayer(markers);
     
    
@@ -48,13 +48,14 @@ function filterAndReAddMarkers(data, searchedZipCode) {
 
 function do_map(data, zipCodeForFiltering = null) {
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
+        maxZoom: 5,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
     }),
         latlng = L.latLng(37.697, -97.314);
 
     map = L.map('map', { center: latlng, zoom: 6, layers: [tiles] });
-
+    map.scrollWheelZoom.disable();
     addMarkers(data, map);
     
 }
+

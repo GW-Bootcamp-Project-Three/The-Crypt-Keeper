@@ -132,8 +132,11 @@ nav a, nav a:hover {
     padding: 200px;
     margin-bottom: 0px;
     text-align: center;
-    font-family: 'nexa_blackregular';
-   
+    font-family: 'nexa_blackregular'; 
+}
+
+#countryMap {
+    height: 45vh;
 }
 
 /*Logo Overlay*/
@@ -177,8 +180,11 @@ footer {
 }
 
 #searchArea {
+    width: 100%;
+    text-align: center;
     position: relative;
     padding-bottom: 1em;
+    display: inline-block;
 }
 
 .block-center {
@@ -317,8 +323,6 @@ span.trans {
 
 #coin-detail label {
     font-weight: bold;
-   
-  
 }
 
 .market-detail {
