@@ -41,6 +41,11 @@
   min-height: 100%;
 }*/
 
+/* Thick black border */
+hr.new4 {
+    border: 1px solid black;
+  }
+  
 body {
     font-family: 'nexa_heavyregular', 'sans-serif';
 }
@@ -138,11 +143,11 @@ nav a, nav a:hover {
 
 /*Logo Overlay*/
 div.l1  { 
-            z-index:2 ;
-            opacity:.2;
-            background-repeat: no-repeat;
-            background-position:105% 110%; 
-            background-image:url(/static/images/bm-500.png);
+        z-index:2 ;
+        opacity:.2;
+        background-repeat: no-repeat;
+        background-position:105% 110%; 
+        background-image:url(/static/images/bm-500.png);
 }
 
 #coin div.l1 {
@@ -174,6 +179,11 @@ footer {
 .button:hover {
     background-color: rgba(255, 255, 255, .75);
     color: #f3723a;
+}
+
+#searchArea {
+    position: relative;
+    padding-bottom: 1em;
 }
 
 .block-center {
@@ -350,3 +360,4 @@ span.trans {
     
 }
 }
+

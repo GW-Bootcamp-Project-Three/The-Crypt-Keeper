@@ -36,11 +36,14 @@ function addMarkers(data, map, stateForFiltering) {
     }
 
     map.addLayer(markers);
+    
+   
 }
 
-function filterAndReAddMarkers(data, searchedZipCode) {
+function filterAndReAddMarkers(data, searchedState) {
     markers.clearLayers();
-    addMarkers(data, map, searchedZipCode);
+    addMarkers(data, map, searchedState);
+    
 }
 
 function do_map(data, stateForFiltering = null) {
@@ -53,4 +56,5 @@ function do_map(data, stateForFiltering = null) {
     map = L.map('map', { center: latlng, zoom: 5, layers: [tiles] });
 
     addMarkers(data, map);
+    
 }

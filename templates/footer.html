@@ -1,3 +1,61 @@
+<div class='ticker-footer-wrapper'>
+    <div class="row tickers">
+
+    </div>
+</div>
+<style>
+    .ticker-footer-wrapper {
+        position: fixed;
+        bottom: 0px;
+        width: 100vw;
+        z-index: 4;
+        background-color: rgba(0, 0, 0, .8);
+        padding: 2em 2em;
+        color:#fff;
+    }
+       .ticker-footer-wrapper img{
+        max-width: 30px;
+        display: inline-block;
+    }
+        .ticker-footer-wrapper span{
+        display: inline-block;
+        padding: .50em;
+    }
+</style>
+<script src="{{ url_for('static', filename='js/config.js') }}"></script>
+
+<script>
+    function get_ticker(){
+        d3.json(`https://api.nomics.com/v1/currencies/ticker?key=${market_API}&ids=BTC,%20XRP,%20ETH&per-page=100&page=1`).then((data) => {
+            let HTML = '';
+            data.forEach(element => {
+                //console.log(element)
+                let currency = element.currency;
+                let image = element.logo_url;
+                let price = element.price;
+                // console.log(image);
+                HTML += `<div class='col-md-3'>`
+                HTML += `<img src='${image}'/>`
+                HTML += `<span>${currency}</span>`
+                HTML += `<span>${price}</span>`
+                HTML += `</div>`
+
+
+
+                //$('.tickers').append(`<div class='col-md-3'><h6>${element.currency}<h6></div>`)
+            });
+            $('.tickers').append(`${HTML}`)
+            // plotloader(data);
+            // barplotloader();
+        });
+    }
+
+   
+     
+
+</script>
+
+
 <footer class="ckBlue contianer-fluid">
     <div class='container'>
         <div class="col-lg-6">
