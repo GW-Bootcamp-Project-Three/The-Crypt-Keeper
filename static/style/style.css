@@ -41,6 +41,11 @@
   min-height: 100%;
 }*/
 
+/* Thick black border */
+hr.new4 {
+    border: 1px solid black;
+  }
+  
 body {
     font-family: 'nexa_heavyregular', 'sans-serif';
 }
@@ -359,3 +364,4 @@ span.trans {
     
 }
 }
+
