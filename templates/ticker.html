@@ -24,8 +24,7 @@
         padding: .50em;
     }
 </style>
-<!-- <script src="{{ url_for('static', filename='js/config.js') }}"></script> -->
-
+  
 <script>
     function get_ticker() {
         d3.json('https://api.nomics.com/v1/currencies/ticker?key=6fc8be83929bfdace339576f2abc5557&ids=BTC, XRP, ETH&interval=1d,7d,30d&per-page=100&page=1').then((data) => {

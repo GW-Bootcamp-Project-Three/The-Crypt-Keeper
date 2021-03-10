@@ -5,19 +5,19 @@ d3.json("/static/js/ATMdata.json", function (data) {
     //console.log(data);
     do_map(data);
 
-    document.getElementById('stateFilterSearchButton').addEventListener('click', function () {
-        var searchedState = document.getElementById('stateFilterInput').value;
-        filterAndReAddMarkers(data, searchedState)
+    document.getElementById('FilterSearchButton').addEventListener('click', function () {
+        var searchedZipCode = document.getElementById('FilterInput').value;
+        filterAndReAddMarkers(data, searchedZipCode)
     });
 });
 
-function addMarkers(data, map, stateForFiltering) {
+function addMarkers(data, map, zipCodeForFiltering) {
     for (var i = 0; i < data.length; i++) {
         var feature = data[i]
         var Properties = feature.Properties;
-        var state = Properties['State'];
+        var zipCode = Properties['Zip Code'];
 
-        if (stateForFiltering && stateForFiltering !== state) {
+        if (zipCodeForFiltering && zipCodeForFiltering !== zipCode) {
             continue;
         }
 
@@ -40,26 +40,21 @@ function addMarkers(data, map, stateForFiltering) {
    
 }
 
-function filterAndReAddMarkers(data, searchedState) {
+function filterAndReAddMarkers(data, searchedZipCode) {
     markers.clearLayers();
-    addMarkers(data, map, searchedState);
+    addMarkers(data, map, searchedZipCode);
     
 }
 
-function do_map(data, stateForFiltering = null) {
+function do_map(data, zipCodeForFiltering = null) {
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 5,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
     }),
         latlng = L.latLng(37.697, -97.314);
 
-<<<<<<< HEAD
     map = L.map('map', { center: latlng, zoom: 6, layers: [tiles] });
     map.scrollWheelZoom.disable();
-=======
-    map = L.map('map', { center: latlng, zoom: 5, layers: [tiles] });
-
->>>>>>> 01bcef5c99a37822bb43925c77b96441dc5e6bc0
     addMarkers(data, map);
     
 }
