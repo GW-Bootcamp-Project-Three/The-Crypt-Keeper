@@ -5,19 +5,19 @@ d3.json("/static/js/ATMdata.json", function (data) {
     //console.log(data);
     do_map(data);
 
-    document.getElementById('zipCodeFilterSearchButton').addEventListener('click', function () {
-        var searchedZipCode = document.getElementById('zipCodeFilterInput').value;
-        filterAndReAddMarkers(data, searchedZipCode)
+    document.getElementById('stateFilterSearchButton').addEventListener('click', function () {
+        var searchedState = document.getElementById('stateFilterInput').value;
+        filterAndReAddMarkers(data, searchedState)
     });
 });
 
-function addMarkers(data, map, zipCodeForFiltering) {
+function addMarkers(data, map, stateForFiltering) {
     for (var i = 0; i < data.length; i++) {
         var feature = data[i]
         var Properties = feature.Properties;
-        var zipCode = Properties['Zip Code'];
+        var state = Properties['State'];
 
-        if (zipCodeForFiltering && zipCodeForFiltering !== zipCode) {
+        if (stateForFiltering && stateForFiltering !== state) {
             continue;
         }
 
@@ -43,14 +43,14 @@ function filterAndReAddMarkers(data, searchedZipCode) {
     addMarkers(data, map, searchedZipCode);
 }
 
-function do_map(data, zipCodeForFiltering = null) {
+function do_map(data, stateForFiltering = null) {
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
     }),
         latlng = L.latLng(37.697, -97.314);
 
-    map = L.map('map', { center: latlng, zoom: 6, layers: [tiles] });
+    map = L.map('map', { center: latlng, zoom: 5, layers: [tiles] });
 
     addMarkers(data, map);
 }
