@@ -335,6 +335,29 @@ span.trans {
     text-align: left;
 }
 
+.ticker-footer-wrapper {
+        position: fixed;
+        bottom: 0px;
+        width: 100vw;
+        z-index: 4;
+        background-color: rgba(0, 0, 0, .8);
+        padding: 2em 1em;
+        color: #fff;
+    }
+
+.ticker-footer-wrapper img {
+    max-width: 35px;
+    display: inline-block;
+    background-color:rgba(255, 255, 255, .8);
+    padding:4px; 
+    border-radius:50%;
+}
+
+.ticker-footer-wrapper span {
+    display: inline-block;
+    padding: .50em;
+}
+
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {

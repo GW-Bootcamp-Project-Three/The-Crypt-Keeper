@@ -126,6 +126,25 @@ def surveyview():
 def map():
     return render_template("map.html", accessToken=accessToken)
 
+
+@app.route("/api/ticker", methods=['GET'])
+def ticker():
+    response = requests.get('https://crypt-keeper.herokuapp.com/api/view/vwCoins')
+    tdf = pd.DataFrame(response.json())
+    Coins = tdf['TokenName'][0:6]
+    CoinList = Coins.astype(str).values.tolist()
+    Token = ','.join(CoinList)
+    # print(Token)
+    url = f"https://api.nomics.com/v1/currencies/ticker?key={market_API}&ids={Token}&interval=1d,7d,30d&per-page=100&page=1"
+    # print(url)
+    response = requests.get(url)
+    df = pd.DataFrame(response.json())
+    _json = df.to_json(orient='records')
+    resp = make_response(_json)
+    resp.headers['content-type'] = 'application/json'
+    return resp
+
+
 # run the app in debug mode
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
