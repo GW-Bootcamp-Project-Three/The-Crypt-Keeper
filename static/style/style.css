@@ -43,7 +43,7 @@
 
 /* Thick black border */
 hr.new4 {
-    border: 1px solid black;
+    border: 1px solid #595753;
   }
   
 body {
@@ -140,8 +140,12 @@ nav a, nav a:hover {
     font-family: 'nexa_blackregular'; 
 }
 
+#aboutteam {
+    height: 40vh;   
+}
+
 #countryMap {
-    height: 45vh;
+    height: 40vh;
 }
 
 /*Logo Overlay*/
@@ -335,18 +339,19 @@ span.trans {
     text-align: left;
 }
 
+/* Ticker Formatting */
 .ticker-footer-wrapper {
         position: fixed;
         bottom: 0px;
         width: 100vw;
         z-index: 4;
-        background-color: rgba(0, 0, 0, .8);
-        padding: 2em 1em;
+        background-color: rgba(61, 55, 58, .6);
+        padding: .75em 1em;
         color: #fff;
     }
 
 .ticker-footer-wrapper img {
-    max-width: 35px;
+    max-width: 30px;
     display: inline-block;
     background-color:rgba(255, 255, 255, .8);
     padding:4px; 
