@@ -190,6 +190,7 @@ footer {
     position: relative;
     padding-bottom: 1em;
     display: inline-block;
+    border-radius: 16px;
 }
 
 .block-center {
