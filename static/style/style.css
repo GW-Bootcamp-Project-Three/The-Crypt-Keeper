@@ -378,6 +378,10 @@ span.trans {
     padding: .50em;
 }
 
+#descripton {
+    font-size: 18px;
+}
+
 /*Media Query */
 @media only screen and (min-width: 1200px) {
   .navbar-nav {
