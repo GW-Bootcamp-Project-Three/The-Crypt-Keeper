@@ -36,24 +36,28 @@
                         This coin's first trade took place on {{market_data[0].first_trade[0:10]}} (Y-M-D).
                         {% endif %}
                         {% if 'price' in market_data[0] %}
-                        The price, as of today is {{"${:.2f}".format(market_data[0].price|float)}}
-                        {% endif %} </p>
+                        The price, as of today is {{"${:,.2f}".format(market_data[0].price|float)}}
+                        {% endif %}
+                        {% if 'max_supply' in market_data[0] %}
+                        had a max supply of {{"{:,.2f}".format(market_data[0].max_supply|float)}} coins.
+                        {% endif %}
+                         </p>
                         <p>
                         {% if 'currency' in market_data[0] %}
                         In the last 24 Hours {{market_data[0].currency}}
                         {% endif %}
                         {% if 'circulating_supply' in market_data[0] %}
-                        had a circulation supply of {{market_data[0].circulating_supply}}
+                        with a circulation supply of {{"{:,.2f}".format(market_data[0].circulating_supply|float)}} coins.
                         {% endif %}
                         {% if '1d' in market_data[0] %}
-                        and had a trade volume of {{ "${:.2f}".format(market_data[0]['1d'].volume|float) }}. This is
+                        and had a trade volume of {{ "${:,.3f}".format(market_data[0]['1d'].volume|float) }}. This is
                         {{"{:.2f}%".format(market_data[0]['1d'].volume_change_pct|float)}} change from yesterday's reported volume of 
-                        {{ "${:.2f}".format(market_data[0]['1d'].volume_change|float) }}.
-                        The price has changed {{ "${:.2f}".format(market_data[0]['1d'].price_change|float) }} from yesterday.
-                        The percentage difference being {{"{:.3f}%".format(market_data[0]['1d'].price_change_pct|float)}}.
-                        Today {{market_data[0].name}}'s reported market cap was {{"${:.2f}".format(market_data[0].market_cap|float)}}.
-                        This is a {{"{:.3f}%".format(market_data[0]['1d'].market_cap_change_pct|float)}} change from yesterday's
-                        reported {{ "${:.2f}".format(market_data[0]['1d'].market_cap_change|float) }}.
+                        {{ "${:,.2f}".format(market_data[0]['1d'].volume_change|float) }}.
+                        The price has changed {{ "${:,.2f}".format(market_data[0]['1d'].price_change|float) }} from yesterday.
+                        The percentage difference being {{"{:,.3f}%".format(market_data[0]['1d'].price_change_pct|float)}}.
+                        Today {{market_data[0].name}}'s reported market cap was {{"${:,.2f}".format(market_data[0].market_cap|float)}}.
+                        This is a {{"{:,.3f}%".format(market_data[0]['1d'].market_cap_change_pct|float)}} change from yesterday's
+                        reported {{ "${:,.2f}".format(market_data[0]['1d'].market_cap_change|float) }}.
                         {% endif %}
                         </p>
 
@@ -94,23 +98,23 @@
                     <br><label>Rank:</label> {{market_data[0].rank}} 
                     <br><label>Number of Exchanges:</label> {{market_data[0].num_exchanges}} 
                     <br><label>First Trade (Y-M-D):</label>  {{market_data[0].first_trade[0:10]}} 
-                    <br><label>Price:</label> {{"${:.2f}".format(market_data[0].price|float)}}
-                    <br><label>High:</label> {{"${:.2f}".format(market_data[0].high|float)}}
-                    <br><label>Circulation Supply:</label> {{market_data[0].circulating_supply}} 
-                    <br><label>Max Supply:</label> {{market_data[0].max_supply}} 
-                    <br><label>Market Cap</label> {{"${:.2f}".format(market_data[0].market_cap|float)}}
+                    <br><label>Price:</label> {{"${:,.2f}".format(market_data[0].price|float)}}
+                    <br><label>High:</label> {{"${:,.2f}".format(market_data[0].high|float)}}
+                    <br><label>Circulation Supply:</label> {{"{:,.2f}".format(market_data[0].circulating_supply|float)}}
+                    <br><label>Max Supply:</label> {{"{:,.2f}".format(market_data[0].max_supply|float)}}
+                    <br><label>Market Cap</label> {{"${:,.2f}".format(market_data[0].market_cap|float)}}
                     {% else %} Data Not Available From API
                     {% endif %}
                 </div>
                 <div class='col-lg-3 '>
                     <h5>24 Hours</h5>
                     {% if '1d' in market_data[0] %}
-                    <label>Volume:</label> {{ "${:.2f}".format(market_data[0]['1d'].volume|float) }}
-                    <br><label>Price Change:</label> {{ "${:.2f}".format(market_data[0]['1d'].price_change|float) }}
+                    <label>Volume:</label> {{ "${:,.3f}".format(market_data[0]['1d'].volume|float) }}
+                    <br><label>Price Change:</label> {{ "${:,.2f}".format(market_data[0]['1d'].price_change|float) }}
                     <br><label>Price % Change:</label> {{"{:.3f}".format(market_data[0]['1d'].price_change_pct|float)}}
-                    <br><label>Volume Change:</label> {{ "${:.2f}".format(market_data[0]['1d'].volume_change|float) }}
-                    <br><label>Volume % Change:</label> {{"{:.2f}".format(market_data[0]['1d'].volume_change_pct|float)}}
-                    <br><label>Market Cap Change:</label> {{ "${:.2f}".format(market_data[0]['1d'].market_cap_change|float) }}
+                    <br><label>Volume Change:</label> {{ "${:,.2f}".format(market_data[0]['1d'].volume_change|float) }}
+                    <br><label>Volume % Change:</label> {{"{:.3f}".format(market_data[0]['1d'].volume_change_pct|float)}}
+                    <br><label>Market Cap Change:</label> {{ "${:,.2f}".format(market_data[0]['1d'].market_cap_change|float) }}
                     <br><label>Market Cap % Change:</label> {{"{:.3f}".format(market_data[0]['1d'].market_cap_change_pct|float)}}
                     {% else %} Data Not Available From API
                     {% endif %}
@@ -118,12 +122,12 @@
                 <div class='col-lg-3 '>
                     <h5>7 Day</h5>
                     {% if '7d' in market_data[0] %}
-                    <label>Volume:</label> {{ "${:.2f}".format(market_data[0]['7d'].volume|float) }}
-                    <br><label>Price Change:</label> {{ "${:.2f}".format(market_data[0]['7d'].price_change|float) }}
+                    <label>Volume:</label> {{ "${:,.2f}".format(market_data[0]['7d'].volume|float) }}
+                    <br><label>Price Change:</label> {{ "${:,.2f}".format(market_data[0]['7d'].price_change|float) }}
                     <br><label>Price % Change:</label> {{"{:.2f}".format(market_data[0]['7d'].price_change_pct|float)}}
-                    <br><label>Volume Change:</label> {{ "${:.2f}".format(market_data[0]['7d'].volume_change|float) }}
+                    <br><label>Volume Change:</label> {{ "${:,.2f}".format(market_data[0]['7d'].volume_change|float) }}
                     <br><label>Volume % Change:</label> {{"{:.2f}".format(market_data[0]['7d'].volume_change_pct|float)}}
-                    <br><label>Market Cap Change:</label> {{ "${:.2f}".format(market_data[0]['7d'].market_cap_change|float) }}
+                    <br><label>Market Cap Change:</label> {{ "${:,.2f}".format(market_data[0]['7d'].market_cap_change|float) }}
                     <br><label>Market Cap % Change:</label> {{"{:.2f}".format(market_data[0]['7d'].market_cap_change_pct|float)}}
                     {% else %} Data Not Available From API
                     {% endif %}
@@ -131,12 +135,12 @@
                 <div class='col-lg-3 '>
                     <h5>30 Day</h5>
                     {% if '30d' in market_data[0] %}
-                    <label>Volume:</label> {{ "${:.2f}".format(market_data[0]['30d'].volume|float) }}
-                    <br><label>Price Change:</label> {{ "${:.2f}".format(market_data[0]['30d'].price_change|float) }}
+                    <label>Volume:</label> {{ "${:,.2f}".format(market_data[0]['30d'].volume|float) }}
+                    <br><label>Price Change:</label> {{ "${:,.2f}".format(market_data[0]['30d'].price_change|float) }}
                     <br><label>Price % Change:</label> {{"{:.2f}".format(market_data[0]['30d'].price_change_pct|float)}}
-                    <br><label>Volume Change:</label> {{ "${:.2f}".format(market_data[0]['30d'].volume_change|float) }}
+                    <br><label>Volume Change:</label> {{ "${:,.2f}".format(market_data[0]['30d'].volume_change|float) }}
                     <br><label>Volume % Change:</label> {{"{:.2f}".format(market_data[0]['30d'].volume_change_pct|float)}}
-                    <br><label>Market Cap Change:</label> {{ "${:.2f}".format(market_data[0]['30d'].market_cap_change|float) }}
+                    <br><label>Market Cap Change:</label> {{ "${:,.2f}".format(market_data[0]['30d'].market_cap_change|float) }}
                     <br><label>Market Cap % Change:</label> {{"{:.2f}".format(market_data[0]['30d'].market_cap_change_pct|float)}}
                     {% else %} Data Not Available
                     {% endif %}
