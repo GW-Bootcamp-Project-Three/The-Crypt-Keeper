@@ -16,10 +16,13 @@
                 let price = element.price;
                 // console.log(image);
                 HTML += `<div class='col-md-2'>`
-                HTML += `<img src='${image}'/>`
-                HTML += `<span>${currency}</span>`
-                HTML += `<span>${price}</span>`
+                    HTML += `<a href= '/coin/${element.CoinID}'>`
+                        HTML += `<img src='${image}'/>`
+                        HTML += `<span>${currency}</span>`
+                        HTML += `<span>${price}</span>`
+                    HTML += `</a>`
                 HTML += `</div>`
+
 
 
 

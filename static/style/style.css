@@ -350,6 +350,21 @@ span.trans {
         color: #fff;
     }
 
+.ticker-footer-wrapper a {
+    color: #fff;
+    transition-duration: 1s;
+}
+
+.ticker-footer-wrapper .col-md-2 {
+    transition-duration: .5s;
+}
+
+.ticker-footer-wrapper .col-md-2:hover {
+    transition-duration: .5s;
+    /* color: rgb(32, 30, 30); */
+    background-color: rgba(243, 114, 58, .6);
+}
+
 .ticker-footer-wrapper img {
     max-width: 30px;
     display: inline-block;

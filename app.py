@@ -139,9 +139,13 @@ def ticker():
     # print(url)
     response = requests.get(url)
     df = pd.DataFrame(response.json())
-    _json = df.to_json(orient='records')
+    df_merged = pd.merge(tdf, df, left_on='TokenName', right_on='id')
+    _json = df_merged.to_json(orient='records')
     resp = make_response(_json)
     resp.headers['content-type'] = 'application/json'
+
+    
+
     return resp
 
 
