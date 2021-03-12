@@ -168,10 +168,26 @@
 
                         <label for="ifInvested" class="form-label">Amount to Invest</label>
                         <input type="text" class="form-control" id="ifInvested">
-                        
-                        <div id='InvResult'>
+ 
 
-                        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    Gross
+                                </td>
+                                <td id='grossResult'>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Net
+                                </td>
+                                <td id='netResult'>
+                            
+                                </td>
+                            </tr>
+                        </table>
 
                         <script>
                         
@@ -182,13 +198,15 @@
                                 var ifInvested = d3.select('#ifInvested');
                                 let InvDateVal = InvDate.property('value');
                                 let invValue = ifInvested.property('value');
-                                var InvResult = d3.select('#InvResult');
 
                                 if(InvDateVal != '' && invValue != ''){
                                     // console.log('TacoCat')
                                    
                                     let g = parseFloat(InvDateVal) * parseFloat(invValue);
-                                    InvResult.html('$'+g);
+                                    d3.select('#grossResult').html('$' + g)
+
+                                    let n = g -  parseFloat(invValue);
+                                    d3.select('#netResult').html('$' + n)
 
                                 }
 
