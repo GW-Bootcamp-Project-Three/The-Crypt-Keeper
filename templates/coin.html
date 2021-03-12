@@ -156,19 +156,19 @@
     <hr>
         <div class='container-fluid' id='timemachine'>
             <div class='container'>
+                <h3>What if You Had Invested?</h3><br>
                 <div class="row">
-                    <div class='col-lg-12'>
-                        <label for="InvDate" class="form-label">Pick A Date</label>
+                    <div class='col-lg-6'>
+                        <label for="InvDate" class="form-label">Pick A Date to Start Your Investment</label>
                         <select id="InvDate" class="form-select">
                             <option selected>Choose...</option>
                             {% for record in coin_history %}
                                 <option value="{{record.PerChange}}">{{record.RecordDate}}</option>
                             {% endfor %}
                         </select>
-
-                        <label for="ifInvested" class="form-label">Amount to Invest</label>
-                        <input type="text" class="form-control" id="ifInvested">
- 
+                        
+                        <label for="ifInvested" class="form-label"></label>
+                        <input type="text" class="form-control" id="ifInvested" placeholder="Enter how much would you invest?">
 
                         <table>
                             <tr>
@@ -189,32 +189,11 @@
                             </tr>
                         </table>
 
-                        <script>
-                        
-                            d3.select('#InvDate').on('change', InvDateChanged);
-
-                            function InvDateChanged(){
-                                var InvDate = d3.select('#InvDate');
-                                var ifInvested = d3.select('#ifInvested');
-                                let InvDateVal = InvDate.property('value');
-                                let invValue = ifInvested.property('value');
-
-                                if(InvDateVal != '' && invValue != ''){
-                                    // console.log('TacoCat')
-                                   
-                                    let g = parseFloat(InvDateVal) * parseFloat(invValue);
-                                    d3.select('#grossResult').html('$' + g)
-
-                                    let n = g -  parseFloat(invValue);
-                                    d3.select('#netResult').html('$' + n)
-
-                                }
-
-                                console.log(invValue);
-
-                            }
-                        </script>
         
+                    </div>
+                    <div class='col-lg-6' >
+                        <div id='investPlot'></div>
+                        TacoCat
                     </div>
                 </div>
         

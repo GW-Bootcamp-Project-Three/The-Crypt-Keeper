@@ -155,3 +155,44 @@ $(document).ready(function () {
 
 //     Plotly.newPlot('coin-barplot', data, layout);
 // }
+
+d3.select('#InvDate').on('change', InvestMachine);
+d3.select('#ifInvested').on('keyup', InvestMachine);
+
+function InvestMachine() {
+    var InvDate = d3.select('#InvDate');
+    var ifInvested = d3.select('#ifInvested');
+    let InvDateVal = InvDate.property('value');
+    let invValue = ifInvested.property('value');
+
+    if (InvDateVal != '' && invValue != '') {
+        // console.log('TacoCat')
+
+        let g = parseFloat(InvDateVal) * parseFloat(invValue);
+        d3.select('#grossResult').html('$' + g)
+
+        let n = g - parseFloat(invValue);
+        d3.select('#netResult').html('$' + n)
+
+    }
+
+    console.log(d3.select('#InvDate option'))
+    x = []
+    y = []
+
+    var trace1 = {
+        x: [1, 2, 3, 4],
+        y: [10, 15, 13, 17],
+        type: 'scatter'
+    };
+
+    var data = [trace1];
+
+    Plotly.newPlot('investPlot', data, { displayModeBar: false });
+
+
+
+}
+
+
+

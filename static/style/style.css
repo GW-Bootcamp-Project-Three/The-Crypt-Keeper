@@ -188,6 +188,11 @@ footer {
     color: #f3723a;
 }
 
+.button-invert {
+    background-color: #f3723a;
+    color: #fff;
+}
+
 #searchArea {
     width: 100%;
     text-align: center;
@@ -381,6 +386,15 @@ span.trans {
 #descripton {
     font-size: 18px;
 }
+
+#timemachine {
+    color: #595753;
+}
+
+.form-select {
+    color: #595753;
+}
+
 
 /*Media Query */
 @media only screen and (min-width: 1200px) {
