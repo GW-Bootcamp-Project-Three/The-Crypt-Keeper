@@ -20,7 +20,7 @@ function addMarkers(data, map, stateForFiltering) {
         if (stateForFiltering && stateForFiltering !== state) {
             continue;
         }
-
+// filter edit
         var geometry = feature.geometry;
         var lng = geometry.coordinates[0];
         var lat = geometry.coordinates[1];
