@@ -8,7 +8,7 @@
    
  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css">
+    <!-- <link rel="stylesheet" href="style/style.css"> -->
  
 </head> 
 <body> 
@@ -27,7 +27,7 @@
             <div class="container" >
                 
                 <h1 class="text-center display-4">BE A CRYPT-KEEPER</h1>
-                <h1 class="text-center display-4">ENTER YOUR INFORMATION BELOW</h1>
+                <h1 class="text-center display-4">Add your two cents</h1>
 
                 <form class="row g-3">
                     <div class="col-md-6">
@@ -85,7 +85,14 @@
                     </div>
                     <div class="col-12">
                         <label for="Concern" class="form-label">Concerns?</label>
-                        <input type="text" class="form-control" id="Concern" placeholder="Let us know how we can help you">
+                        <select id="Concern" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>Fraud</option>
+                            <option>Lack of Regulation</option>
+                            <option>I do not Know Enough About cryptocurrency</option>
+                            <option>Volitility</option>
+                        </select>
+                        <!-- <input type="text" class="form-control" id="Concern" placeholder="Let us know how we can help you"> -->
                       </div>
                    
                     <div class="col-12">

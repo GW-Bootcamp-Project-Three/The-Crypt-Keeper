@@ -95,16 +95,19 @@
                     <!-- <h5>Today:</h5> -->
                     {% if 'status' in market_data[0] %}
                     <label>Status:</label> {{market_data[0].status}} 
+                    {% else %} Status Data Not Available From API
+                    {% endif %}
                     <br><label>Rank:</label> {{market_data[0].rank}} 
                     <br><label>Number of Exchanges:</label> {{market_data[0].num_exchanges}} 
                     <br><label>First Trade (Y-M-D):</label>  {{market_data[0].first_trade[0:10]}} 
                     <br><label>Price:</label> {{"${:,.2f}".format(market_data[0].price|float)}}
                     <br><label>High:</label> {{"${:,.2f}".format(market_data[0].high|float)}}
                     <br><label>Circulation Supply:</label> {{"{:,.2f}".format(market_data[0].circulating_supply|float)}}
+                    {% if 'max_supply' in market_data[0] %}
                     <br><label>Max Supply:</label> {{"{:,.2f}".format(market_data[0].max_supply|float)}}
-                    <br><label>Market Cap</label> {{"${:,.2f}".format(market_data[0].market_cap|float)}}
-                    {% else %} Data Not Available From API
                     {% endif %}
+                    <br><label>Market Cap</label> {{"${:,.2f}".format(market_data[0].market_cap|float)}}
+                    
                 </div>
                 <div class='col-lg-3 '>
                     <h5>24 Hours</h5>
@@ -145,8 +148,63 @@
                     {% else %} Data Not Available
                     {% endif %}
                 </div>
-          
+
+
             </div>
+        </div>
+    </div>
+    <hr>
+        <div class='container-fluid' id='timemachine'>
+            <div class='container'>
+                <div class="row">
+                    <div class='col-lg-12'>
+                        <label for="InvDate" class="form-label">Pick A Date</label>
+                        <select id="InvDate" class="form-select">
+                            <option selected>Choose...</option>
+                            {% for record in coin_history %}
+                                <option value="{{record.PerChange}}">{{record.RecordDate}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="ifInvested" class="form-label">Amount to Invest</label>
+                        <input type="text" class="form-control" id="ifInvested">
+                        
+                        <div id='InvResult'>
+
+                        </div>
+
+                        <script>
+                        
+                            d3.select('#InvDate').on('change', InvDateChanged);
+
+                            function InvDateChanged(){
+                                var InvDate = d3.select('#InvDate');
+                                var ifInvested = d3.select('#ifInvested');
+                                let InvDateVal = InvDate.property('value');
+                                let invValue = ifInvested.property('value');
+                                var InvResult = d3.select('#InvResult');
+
+                                if(InvDateVal != '' && invValue != ''){
+                                    // console.log('TacoCat')
+                                   
+                                    let g = parseFloat(InvDateVal) * parseFloat(invValue);
+                                    InvResult.html('$'+g);
+
+                                }
+
+                                console.log(invValue);
+
+                            }
+                        </script>
+        
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    <hr>
+    <div class='container-fluid'>
+        <div class='container'>
             <div class='row'>
                 <div class='col-lg-12 history-data'>
                     <!-- <h2>{{coin_view[0].CoinName}} ({{coin_view[0].TokenName}})</h2> -->
@@ -182,6 +240,10 @@
             </div> 
         </div>
     </div> 
+
+
+
+
     <div  class="container-fluid"  id="vid" style=" height:100vh; ">
         rgba(254,114,58,.9)
         <div class="absolute-wrapper layer l2" style="background-color:rgba(10, 63, 84,.9);"> a </div>

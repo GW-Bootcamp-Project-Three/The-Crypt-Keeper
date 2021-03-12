@@ -12,6 +12,7 @@ function plotloader(data) {
     var y = unpack(data, 'High')
     var x2 = unpack(data, 'RecordDateNormalized')
     var y2 = unpack(data, 'Low')
+
     var max = x.length;
     for (var i = 0; i < max; i++) {
         frames[i] = { data: [{ x: [], y: [] }, { x: [], y: [] }] }
@@ -67,46 +68,46 @@ function plotloader(data) {
         legend: {
             orientation: 'h', x: 0.5, y: 1.2, xanchor: 'center'
         },
-        updatemenus: [{
-            x: 0.5,
-            y: 0,
-            yanchor: "top",
-            xanchor: "center",
-            showactive: false,
-            direction: "left",
-            type: "buttons",
-            pad: { "t": 87, "r": 10 },
-            buttons: [{
-                method: "animate",
-                args: [null, {
-                    fromcurrent: true,
-                    transition: {
-                        duration: 1,
-                    },
-                    frame: {
-                        duration: 40,
-                        redraw: false
-                    }
-                }],
-                label: "Play"
-            }, {
-                method: "animate",
-                args: [
-                    [null],
-                    {
-                        mode: "immediate",
-                        transition: {
-                            duration: 0
-                        },
-                        frame: {
-                            duration: 0,
-                            redraw: false
-                        }
-                    }
-                ],
-                label: "Pause"
-            }]
-        }]
+        // updatemenus: [{
+        //     x: 0.5,
+        //     y: 0,
+        //     yanchor: "top",
+        //     xanchor: "center",
+        //     showactive: false,
+        //     direction: "left",
+        //     type: "buttons",
+        //     pad: { "t": 87, "r": 10 },
+        //     buttons: [{
+        //         method: "animate",
+        //         args: [null, {
+        //             fromcurrent: true,
+        //             transition: {
+        //                 duration: 1,
+        //             },
+        //             frame: {
+        //                 duration: 40,
+        //                 redraw: false
+        //             }
+        //         }],
+        //         label: "Play"
+        //     }, {
+        //         method: "animate",
+        //         args: [
+        //             [null],
+        //             {
+        //                 mode: "immediate",
+        //                 transition: {
+        //                     duration: 0
+        //                 },
+        //                 frame: {
+        //                     duration: 0,
+        //                     redraw: false
+        //                 }
+        //             }
+        //         ],
+        //         label: "Pause"
+        //     }]
+        // }];
     };
     //console.log(trace1);
     //  return; 
@@ -114,13 +115,13 @@ function plotloader(data) {
         Plotly.addFrames('plot', frames);
     
     });
-}
+};
 
 
 $(document).ready(function () {
-    var element = $('.updatemenu-button  rect .updatemenu-item-rect')
-    element.trigger('click');
-    console.log(element)
+    // var element = $('.updatemenu-button  rect .updatemenu-item-rect')
+    // element.trigger('click');
+    // console.log(element)
 
 
     // $('#navbarDropdown').trigger('click');
