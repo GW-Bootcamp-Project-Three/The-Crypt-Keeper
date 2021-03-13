@@ -165,8 +165,11 @@ function InvestMachine() {
     let InvDateVal = InvDate.property('value');
     let invValue = ifInvested.property('value');
 
+    if(invValue == ''){
+        invValue = 0;
+    };
     if (InvDateVal != '' && invValue != '') {
-        // console.log('TacoCat')
+        
 
         let g = parseFloat(InvDateVal) * parseFloat(invValue);
         d3.select('#grossResult').html('$' + g)
@@ -176,23 +179,47 @@ function InvestMachine() {
 
     }
 
-    console.log(d3.select('#InvDate option'))
     x = []
     y = []
 
+    $('#InvDate option').each(function (i, ele) {
+        console.log(ele)
+        let value = $(ele).val();
+        let date = $(ele).html();
+        if (value != '') {
+            x.push(date);
+            y.push(parseFloat(value) * parseFloat(invValue));
+        };
+
+    });
+   
+
+    // console.log(d3.select('#InvDate option'))
+    console.log(x);
+    console.log(y);
+    yReverse = y.reverse()
+
     var trace1 = {
-        x: [1, 2, 3, 4],
-        y: [10, 15, 13, 17],
-        type: 'scatter'
+        x: x,
+        y: yReverse,
+        type: 'scatter',
+        line: {
+            color: 'rgb(243, 114, 58)',
+            width: 3
+        }
+    };
+
+    var layout = {
+        title: 'Track your "Investment"'
     };
 
     var data = [trace1];
 
-    Plotly.newPlot('investPlot', data, { displayModeBar: false });
-
+    Plotly.newPlot('investPlot', data, layout, { displayModeBar: false })
 
 
 }
+
 
 
 

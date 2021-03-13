@@ -193,6 +193,28 @@ footer {
     color: #fff;
 }
 
+#timemachine table{
+    font-size: 2em;
+
+}
+
+#timemachine select, #timemachine  input {
+    border: solid 3px  #595753;
+    border-radius: 16px;
+    padding: .5em;
+    max-width: 250px;
+    font-size: 1.25em;
+}
+
+#timemachine label{
+    font-size: 1.25em;
+
+}
+
+.inputs div {
+    padding: 1em;
+}
+
 #searchArea {
     width: 100%;
     text-align: center;

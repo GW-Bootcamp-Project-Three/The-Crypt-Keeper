@@ -157,43 +157,52 @@
         <div class='container-fluid' id='timemachine'>
             <div class='container'>
                 <h3>What if You Had Invested?</h3><br>
-                <div class="row">
-                    <div class='col-lg-6'>
+                <div class='row inputs'>
+                    <div class='col-lg-4'>
                         <label for="InvDate" class="form-label">Pick A Date to Start Your Investment</label>
-                        <select id="InvDate" class="form-select">
-                            <option selected>Choose...</option>
-                            {% for record in coin_history %}
+                    </div>
+                        <div class='col-lg-8'>
+                            <select id="InvDate" class="form-select">
+                                <option selected value=''>Choose...</option>
+                                {% for record in coin_history %}
                                 <option value="{{record.PerChange}}">{{record.RecordDate}}</option>
-                            {% endfor %}
-                        </select>
-                        
-                        <label for="ifInvested" class="form-label"></label>
-                        <input type="text" class="form-control" id="ifInvested" placeholder="Enter how much would you invest?">
-
+                                {% endfor %}
+                            </select>
+                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col-lg-4'>
+                        <label for="ifInvested" class="form-label">How Much Would You Invest?</label>
+                    </div>
+                    <div class='col-lg-4'>
+                        <input type="text" class="form-control" id="ifInvested" placeholder="How about 100...">
+                    </div>
+                    <div class='col-lg-4'>
                         <table>
                             <tr>
                                 <td>
                                     Gross
                                 </td>
-                                <td id='grossResult'>
-                                    
-                                </td>
+                                <td id='grossResult'></td>
+                    
                             </tr>
                             <tr>
                                 <td>
                                     Net
                                 </td>
                                 <td id='netResult'>
-                            
+                    
                                 </td>
                             </tr>
                         </table>
-
-        
+                    
+                    
                     </div>
-                    <div class='col-lg-6' >
+                </div>
+                <div class="row">
+                    <div class='col-lg-12' >
                         <div id='investPlot'></div>
-                        TacoCat
+    
                     </div>
                 </div>
         
