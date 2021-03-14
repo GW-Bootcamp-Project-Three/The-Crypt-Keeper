@@ -247,7 +247,7 @@ span.trans {
 }
 
 #reuslts-body img{
-    max-height: 24px;
+    max-height: 40px;
 }
 
 #coin {
@@ -281,10 +281,14 @@ span.trans {
 
  .table-striped {
     color: white;
+    background-color: rgba(0,0,0,.15);
+    font-size: 20px;
  }
+
  .coinsearch-results  a{
     color:#fff !important; 
  }
+
  #coinsearch{
     display: block;
     position:relative;
@@ -299,11 +303,11 @@ span.trans {
 }
 .circ-logo-wrapper img{
     background-color:#fff;
-       padding:2em; 
-       border-radius:50%;
+    padding:2em; 
+    border-radius:50%;
     display: block;
     position:relative;
-    max-height:200px;
+    max-height:300px;
     margin:-70px auto 0px auto;
 }
 
@@ -375,6 +379,7 @@ span.trans {
         background-color: rgba(61, 55, 58, .6);
         padding: .75em 1em;
         color: #fff;
+        z-index: 999;
     }
 
 .ticker-footer-wrapper a {

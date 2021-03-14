@@ -50,8 +50,9 @@ function displayResults() {
         var cell = row.append('td');
         var hrf = cell.append('a');
         hrf.attr("href", "/coin/" + coin['CoinID']);
-        hrf.attr('style', "color:#fff;")
-        hrf.text(`[ CLICK HERE ]`);
+        // hrf.attr('style', "color:#fff;")
+        hrf.attr('class', 'button button-invert')
+        hrf.text(` CLICK HERE `);
 
         let imgsrc = coin['TokenLogo'];
         if (imgsrc == ""){

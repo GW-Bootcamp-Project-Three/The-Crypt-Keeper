@@ -210,7 +210,7 @@ function InvestMachine() {
     };
 
     var layout = {
-        title: 'Track your "Investment"'
+        title: 'Track a Investment'
     };
 
     var data = [trace1];
