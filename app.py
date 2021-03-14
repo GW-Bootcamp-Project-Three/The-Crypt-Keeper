@@ -95,6 +95,10 @@ def coinsearch():
 def countries_map():
 
     return render_template("countries-map.html")
+
+@app.route("/compare-price-dash", methods=['GET', 'POST'])
+def compare_dash():
+    return render_template("compare-price-dash.html")
  
 ########################
 ## GET DATA FROM DB RETURN JSON
