@@ -15,5 +15,5 @@ dash-html-components==0.8.0
 dash-renderer==0.11.3
 dash==0.26.0
 
-plotly.tools
+
 
