@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>CryptKeeper: Predict Price</title>
+
+    {% include'head.html' %}
+    
+
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    {% include'nav.html' %}
+
+    <!-- Jumbotron -->
+    <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
+        <div>
+            <p> <span class='light'>crypt</span>keeper <br>
+                <span class='light'> find your coin.</span>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="ckOrange contianer-fluid" id="price-predict-results">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <label>Lookup Coin</label>
+                    <form method="post">
+                    <input class="form-control" id="coi" name="coi" type="text">
+                    <input type="Submit">
+                    </form>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticker -->
+    {% include'ticker.html' %}
+    <!-- Footer -->
+    {% include'footer.html' %}
+
+
+
+</body>
+<input type="hidden" id="page-data" name="page-data" value="">
+<script src="{{ url_for('static', filename='js/coinsearch.js') }}"></script>
+
+</html>
+
