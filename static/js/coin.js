@@ -172,10 +172,10 @@ function InvestMachine() {
         
 
         let g = parseFloat(InvDateVal) * parseFloat(invValue);
-        d3.select('#grossResult').html('$' + g)
+        d3.select('#grossResult').html('$' + formatNumbers(g))
 
         let n = g - parseFloat(invValue);
-        d3.select('#netResult').html('$' + n)
+        d3.select('#netResult').html('$' + formatNumbers(n))
 
     }
 
@@ -183,7 +183,7 @@ function InvestMachine() {
     y = []
 
     $('#InvDate option').each(function (i, ele) {
-        console.log(ele)
+        // console.log(ele)
         let value = $(ele).val();
         let date = $(ele).html();
         if (value != '') {
@@ -195,8 +195,8 @@ function InvestMachine() {
    
 
     // console.log(d3.select('#InvDate option'))
-    console.log(x);
-    console.log(y);
+    // console.log(x);
+    // console.log(y);
     yReverse = y.reverse()
 
     var trace1 = {
@@ -218,8 +218,5 @@ function InvestMachine() {
     Plotly.newPlot('investPlot', data, layout, { displayModeBar: false })
 
 
-}
-
-
-
+};
 
