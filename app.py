@@ -250,7 +250,7 @@ def price_prediction_data(coin_of_interest):
         best_param = param
     results.append([param, model.aic])
 
-    Generate Price Prediction Data
+    #Generate Price Prediction Data
     def invboxcox(y,lmbda):
         if lmbda == 0:
             return(np.exp(y))
