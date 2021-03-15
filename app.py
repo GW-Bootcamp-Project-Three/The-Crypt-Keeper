@@ -21,8 +21,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 import numpy as np
-from scipy import stats
-import statsmodels.api as sm
+# from scipy import stats
+# import statsmodels.api as sm
 
 # import matplotlib.pyplot as plt
 # import matplotlib as mpl
