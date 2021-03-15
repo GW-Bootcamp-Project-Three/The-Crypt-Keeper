@@ -16,7 +16,7 @@ dash-renderer==0.11.3
 dash==0.26.0
 
 # itertools==0.8.2
-Scipy==0.11.0
+scipy
 # seaborn==0.8.1
 # matplotlib==2.2.0
 
