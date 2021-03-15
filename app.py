@@ -20,7 +20,7 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
-# import numpy as np
+import numpy as np
 # from scipy import stats
 # import statsmodels.api as sm
 
