@@ -18,7 +18,7 @@ from CK_dbFunctions import view_exists, get_dataframe_from_db
 from itertools import product
 from datetime import datetime
 import warnings
-# warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore')
 
 # import numpy as np
 # from scipy import stats
