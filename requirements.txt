@@ -20,6 +20,6 @@ Scipy==0.11.0
 seaborn==0.8.1
 matplotlib==2.2.0
 
-itertools
+
 
 
