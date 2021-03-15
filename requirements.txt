@@ -1,4 +1,9 @@
 gunicorn==20.0.4
+
+certifi==0.0.8
+chardet==1.0.1
+distribute==0.6.24
+
 Jinja2==2.11.2
 Werkzeug==1.0.1
 requests==2.13.0
@@ -14,6 +19,11 @@ dash-core-components==0.18.1
 dash-html-components==0.8.0
 dash-renderer==0.11.3
 dash==0.26.0
+
+itertools==0.8.2
+Scipy==0.11.0
+seaborn==0.8.1
+matplotlib==2.2.0
 
 
 
