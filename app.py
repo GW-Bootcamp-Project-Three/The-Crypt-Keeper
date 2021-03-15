@@ -283,7 +283,7 @@ def price_predict():
 
 @app.route("/price-prediction-data-test", methods=['GET', 'POST'])
 def price_prediction_data_test():
-    x = request.form{}
+    # x = request.form{}
 
 # run the app in debug mode
 if __name__ == "__main__":
