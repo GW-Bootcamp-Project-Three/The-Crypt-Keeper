@@ -255,18 +255,19 @@ def ticker():
 #         else:
 #             return(np.exp(np.log(lmbda*y+1)/lmbda))
 #     coin_history_with_predictions = coin_history[['Close']]
-#     coin_history_with_predictions['forecast'] = invboxcox(best_model.predict(start = 0, end=(len(coin_history_with_predictions)-1)), lmbda)
+#     coin_history_with_predictions['Forecast'] = invboxcox(best_model.predict(start = 0, end=(len(coin_history_with_predictions)-1)), lmbda)
 #     prediction_dates = [datetime(2021, 4, 30), datetime(2021, 5, 31), datetime(2021, 6, 30), 
 #              datetime(2021, 7, 31), datetime(2021, 8, 31), datetime(2021, 9, 30), datetime(2021, 10, 31),
 #              datetime(2021, 11, 30), datetime(2021, 12, 31)]
 #     future = pd.DataFrame(index=prediction_dates, columns= coin_history.columns)
-#     future['forecast'] = invboxcox(best_model.forecast(steps=len(future)), lmbda).tolist()
+#     future['Forecast'] = invboxcox(best_model.forecast(steps=len(future)), lmbda).tolist()
 #     coin_history_with_predictions = pd.concat([coin_history_with_predictions, future])
 #     coin_history_with_predictions['Coin'] = coin_of_interest
-#     coin_history_with_predictions = coin_history_with_predictions[['Coin', 'Close', 'forecast']].rename(columns={'forecast':'Forecast'})
+#     graph = coin_history_with_predictions.reset_index().rename(columns={'index':'Date'})
+#     graph2 = graph[['Coin','Date', 'Close', 'Forecast']]
 
 #     # Return Price Prediction Data to Plotly
-#     _json = coin_history_with_predictions.to_json(orient='records')
+#     _json = graph2.to_json(orient='records')
 #     resp = make_response(_json)
 #     resp.headers['content-type'] = 'application/json'
 
