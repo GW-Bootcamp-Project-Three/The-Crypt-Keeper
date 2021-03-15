@@ -45,6 +45,10 @@
 hr.new4 {
     border: 1px solid #595753;
   }
+
+html {
+  scroll-behavior: smooth;
+}
   
 body {
     font-family: 'nexa_heavyregular', 'sans-serif';
@@ -230,6 +234,11 @@ footer {
     
 }
 
+.navbar-nav img[src*='ico-'] {
+    max-height: 20px;
+    margin: -10px 4px  0px 4px;
+}
+
 nav a:hover {
     border-bottom: 3px solid #fff;
 }
@@ -335,6 +344,7 @@ span.trans {
 .index-img div[class*='col']{
     position: relative;
     text-align: center;
+    padding-bottom: 2em;
     
 }
 
@@ -345,6 +355,8 @@ span.trans {
 .index-img p {
     color: #0a3f54;
     font-size: 1.1em;
+    display: block;
+    min-height: 100px;
 }
 
 

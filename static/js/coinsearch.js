@@ -18,7 +18,7 @@ init() ;
 function createHeaders() {
     var tableHead = d3.select('#results-head');
     tableHead.html('');
-    let ColHeads = ['For More Info', ' ', 'Coin', 'Symbol', 'Price', 'High', 'Low', 'Closing Price', 'Adjusted Close', 'Volume']
+    let ColHeads = ['More Info', ' ', 'Coin', 'Symbol', 'Price', 'High', 'Low', 'Closing Price', 'Adjusted Close', 'Volume']
     ColHeads.forEach(item => {
         var cell = tableHead.append('th');
         cell.text(item);
