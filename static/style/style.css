@@ -177,6 +177,23 @@ div.l1  {
 footer {
     min-height: 25vh;
     padding: 1em 2em;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.footer-nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer-nav li a {
+    padding: .5em 0em;
+    color: #c5c6c7;
+}
+
+.footer-nav ul li a:hover {
+    color: #f3723a;
 }
 
 .button {
