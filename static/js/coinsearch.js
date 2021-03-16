@@ -18,7 +18,7 @@ init() ;
 function createHeaders() {
     var tableHead = d3.select('#results-head');
     tableHead.html('');
-    let ColHeads = ['More Info', ' ', 'Coin', 'Symbol', 'Price', 'High', 'Low', 'Closing Price', 'Adjusted Close', 'Volume']
+    let ColHeads = ['More Info', ' ', 'Coin', 'Symbol', 'Price', 'High', 'Low', 'Closing', 'Adj Close', 'Volume']
     ColHeads.forEach(item => {
         var cell = tableHead.append('th');
         cell.text(item);
@@ -69,24 +69,32 @@ function displayResults() {
         cell.text(coin['TokenName']);
         
         var cell = row.append('td');
-        cell.text(coin['OpenPrice']);
+        let formatOpenPrice = formatNumbers(coin['OpenPrice']);
+        cell.text('$' + formatOpenPrice);
 
         var cell = row.append('td');
-        cell.text(coin['High']);
+        let formatHigh = formatNumbers(coin['High']);
+        cell.text('$' + formatHigh);
 
         var cell = row.append('td');
-        cell.text(coin['Low']);
+        let formatLow = formatNumbers(coin['Low']);
+        cell.text('$' + formatLow);
 
         var cell = row.append('td');
-        cell.text(coin['ClosingPrice']);
+        let formatClose = formatNumbers(coin['ClosingPrice']);
+        cell.text('$' + formatClose);
 
         var cell = row.append('td');
-        cell.text(coin['AdjClose']);
+        let formatAdjClose = formatNumbers(coin['AdjClose']);
+        cell.text('$' + formatAdjClose);
 
         var cell = row.append('td');
-        cell.text(coin['Volume']);
+        let formatVol = formatNumbers(coin['Volume']);
+        cell.text('$' + formatVol);
 
         var cell = row.append('td');
         cell.attr('id', coin['TokenName']);
     }); 
+        
+
 }

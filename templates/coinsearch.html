@@ -19,19 +19,19 @@
     <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
         <div>
             <p> <span class='light'>crypt</span>keeper <br>
-                <span class='light'> find your coin.</span>
+                <span class='light'> find your coin</span>
             </p>
 
         </div>
     </div>
 
     <div class="ckOrange contianer-fluid" id="coinsearch-results">
-        <div class="container">
+        <div class="container coin-lookup">
+            <label>Lookup Coin</label>
+            <input class="form-control" id="coin-filter" name="coin-filter" type="text">
+         </div>     
             <div class="row">
                 <div class="col-lg-12 ">
-                    <label>Lookup Coin</label>
-                    <input class="form-control" id="coin-filter" name="coin-filter" type="text">
-                    <br>
                     <table id='results' class='table table-striped coinsearch-results'>
                         <thead id='results-head'></thead>
                         <tbody id='reuslts-body'></tbody>
@@ -39,7 +39,7 @@
                 </div>
 
             </div>
-        </div>
+      
     </div>
 
     <!-- Ticker -->
