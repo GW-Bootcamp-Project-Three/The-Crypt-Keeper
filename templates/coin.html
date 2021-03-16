@@ -51,8 +51,8 @@
                         with a circulation supply of <span class='format-number'>{{market_data[0].circulating_supply}}</span> coins.
                         {% endif %}
                         {% if '1d' in market_data[0] %}
-                        and had a trade volume of $<span class='format-number'>{{market_data[0]['1d'].volume}}</span>. This is
-                        <span class='format-number'>{{market_data[0]['1d'].volume_change_pct}}</span> change from yesterday's reported volume of 
+                        and had a trade volume of $<span class='format-number'>{{market_data[0]['1d'].volume}}</span>. This is a
+                        <span class='format-number'>{{market_data[0]['1d'].volume_change_pct}}</span>% change from yesterday's reported volume of 
                         $<span class='format-number'>{{market_data[0]['1d'].volume_change}}</span>.
                         The price has changed $<span class='format-number'>{{market_data[0]['1d'].price_change}}</span> from yesterday.
                         The percentage difference being <span class='format-number'>{{market_data[0]['1d'].price_change_pct}}</span>%.
