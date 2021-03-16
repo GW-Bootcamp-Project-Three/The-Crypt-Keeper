@@ -7,6 +7,7 @@
 
     {% include'head.html' %}
     
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 
@@ -25,6 +26,7 @@
         </div>
     </div>
 
+    <!-- Form submit with POST request
     <div class="ckOrange contianer-fluid" id="price-predict-results">
         <div class="container">
             <div class="row">
@@ -36,16 +38,120 @@
                     </form>
                     <br>
                 </div>
-
             </div>
         </div>
     </div>
+    -->
+
+    <!-- New form w/o submit option -->
+    <div class="ckOrange contianer-fluid" id="price-predict-results">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <label>Testing</label>
+                    <!-- <form method="post" action="/price-prediction-data"> -->
+                    <input class="form-control" id="CoinName" name="CoinName" type="text" placeholder="Enter Coin Name">
+                    <input type="button" id='prediction-submit-btn' value='Submit' >
+                    <!-- </form> -->
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plotly placeholder -->
+    <div>
+        <div id='predictions-plot'></div>
+    </div>
+
+    <div>
+        <div id='predictions-table'>
+            <table class='table table-striped'>
+                <thead>
+                    <th>Date</th>
+                    <th>Forecast</th>
+                </thead>
+                <tbody id='tbody'></tbody>
+            </table>
+        </div>
+    </div>
+
 
     <!-- Ticker -->
     {% include'ticker.html' %}
     <!-- Footer -->
     {% include'footer.html' %}
 
+
+    <!-- JavaScript code: You decide if you want to keep it here or place it in a file -->
+    <script type='text/javascript'>
+        coin_name_input = d3.select('#CoinName');
+        submit_btn = d3.select('#prediction-submit-btn');
+
+        function createPredictionsPlot() {
+            coin_name = coin_name_input.property('value');
+            console.log(coin_name);
+
+            d3.json(`/price-prediction-data?CoinName=${coin_name}`).then(data => {
+                console.log(data);
+
+                date = data.map(d => new Date(d['Date']));
+                closing = data.map(d => d['Close']);
+                forecast = data.map(d => d['Forecast']);
+
+                console.log(date, closing, forecast);
+
+                var closing_prices = {
+                    x: date,
+                    y: closing,
+                    type: 'scatter',
+                    name: 'Closing Price'
+                    };
+
+                var forecasted_prices = {
+                    x: date,
+                    y: forecast,
+                    type: 'scatter',
+                    name: 'Forecast',
+                    line: {
+                        dash: 'dot'
+                    }
+                    };
+
+                var plotdata = [closing_prices, forecasted_prices];
+
+                Plotly.newPlot('predictions-plot', plotdata);
+
+                // Build your table here
+
+                // identify the tbody that you want to populate
+                tbody = d3.select('#tbody')
+                
+                data.forEach(entry => {
+
+                    
+                        var currentTime = new Date(parseInt(entry['Date']));
+                        var month = currentTime.getMonth() + 1;
+                        var day = currentTime.getDate();
+                        var year = currentTime.getFullYear();
+
+                        var date = month + "/" + day + "/" + year;
+                        // var closing = entry['Close'].toFixed(0)
+                        var forecasted = entry['Forecast'].toFixed(2)
+                    
+                        var row = tbody.append('tr');
+                        var cell = row.append('td');
+                        cell.text(date);
+                        var cell = row.append('td');
+                        cell.text(forecasted);
+                    
+                }); 
+
+            });
+        }
+
+        submit_btn.on('click', createPredictionsPlot);
+    </script>
 
 
 </body>
