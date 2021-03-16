@@ -23,6 +23,7 @@ import warnings
 import numpy as np
 from scipy import stats
 import statsmodels.api as sm
+from kmodes.kmodes import KModes
 
 
 app = Flask(__name__)  
@@ -390,6 +391,44 @@ def price_prediction_data():
 
     return resp
 
+@app.route("/user-clusters-data", methods=["GET", "POST"])
+def user_clusters_data():
+    
+    # Connect to Amazon mySQL
+    conn = engine.connect()
+
+    # Get user data
+    query = '''
+    SELECT 
+        *
+    FROM
+        CryptoSurveyData
+    '''
+    users = pd.read_sql(query, conn)
+    users.set_index('Entry', inplace=True)
+    people_list = ['User', 'FirstName', 'LastName', 'City', 'State', 'Zip', 'Lat', 'Lng']
+    attribute_list = ['Age', 'Gender', 'Known', 'Understanding', 'HaveInvested', 'CryptoSafe', 'CryptoConcern', 'MoreRiskCryptoStock']
+    people = users[people_list]
+    attributes = users[attribute_list]
+
+    # Cluster users
+    model = KModes(n_clusters=3, init='Huang', n_init=5, verbose=1, random_state=4)
+    clusters = model.fit_predict(attributes)
+
+    # Identify centroids
+    centroids = pd.DataFrame(model.cluster_centroids_, columns=attribute_list)
+    attributes['cluster'] = clusters
+    marketing_df = people.merge(attributes, how='inner', left_index=True, right_index=True)
+
+    _json = centroids.to_json(orient='records')
+    resp = make_response(_json)
+    resp.headers['content-type'] = 'application/json'
+
+    return resp
+
+@app.route("/user-cluster")
+def user_cluster():
+    return render_template("cluster-users.html")
 
 
 @app.route("/price-predict")
