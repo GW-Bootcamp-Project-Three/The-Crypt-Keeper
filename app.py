@@ -267,7 +267,7 @@ def price_prediction_data():
     graph = coin_history_with_predictions.reset_index().rename(columns={'index':'Date'})
     graph2 = graph[['Coin','Date', 'Close', 'Forecast']]
     # Return Price Prediction Data to Plotly
-    _json = coin_history_with_predictions.to_json(orient='records')
+    _json = graph2.to_json(orient='records')
     resp = make_response(_json)
     resp.headers['content-type'] = 'application/json'
 
