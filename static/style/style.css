@@ -153,8 +153,13 @@ nav a, nav a:hover {
 }
 
 #countryMap {
-    height: 40vh;
+    height: 50vh;
 }
+
+#comparePage {
+    height: 50vh;
+}
+
 
 /*Logo Overlay*/
 div.l1  { 
@@ -472,6 +477,19 @@ span.trans {
     color: #595753;
 }
 
+.predict-form input {
+    display: inline-block;
+
+}
+
+.predict-form #CoinName {
+    width: 80%;
+}
+
+.predict-form {
+    padding-bottom: 1em;
+    
+}
 
 /*Media Query */
 @media only screen and (min-width: 1200px) {
