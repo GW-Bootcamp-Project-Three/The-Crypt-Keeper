@@ -17,6 +17,7 @@ dash==0.26.0
 
 scipy
 statsmodels
+kmodes
 
 
 

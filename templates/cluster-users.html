@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>CryptKeeper: Cluster Users</title>
+
+    {% include'head.html' %}
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    {% include'nav.html' %}
+
+    <!-- Jumbotron -->
+    <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
+        <div>
+            <p> <span class='light'>crypt</span>keeper <br>
+                <span class='light'> Cluster</span>
+            </p>
+            Hit the button to calculate centroids<br>
+            <input type="button" id='cluster-submit-btn' value='Calculate' >
+        </div>
+    </div>
+
+    <!-- Form submit with POST request
+    <div class="ckOrange contianer-fluid" id="price-predict-results">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <label>Testing</label>
+                    <form method="post" action="/price-prediction-data">
+                    <input class="form-control" id="CoinName" name="CoinName" type="text" placeholder="Enter Coin Name">
+                    <input type="Submit" value='Submit' >
+                    </form>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div>
+        <div id='predictions-table'>
+            <table class='table table-striped'>
+                <thead>
+                    <th>Centroid #</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Known</th>
+                    <th>Understanding</th>
+                    <th>Have Invested</th>
+                    <th>Safe?</th>
+                    <th>Biggest Concern</th>
+                    <th>More Risky: Crypto or Stock?</th>
+                </thead>
+                <tbody id='tbody'></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- New form w/o submit option -->
+    <div class="ckOrange contianer-fluid" id="price-predict-results">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <label>Which Looks Most Promising?</label>
+                    <!-- <form method="post" action="/price-prediction-data"> -->
+                    <input class="form-control" id="CoinName" name="CoinName" type="text" placeholder="Enter Centroid Number">
+                    <input type="button" id='centroid-submit-btn' value='Submit' >
+                    <!-- </form> -->
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticker -->
+    {% include'ticker.html' %}
+    <!-- Footer -->
+    {% include'footer.html' %}
+
+
+    <!-- JavaScript code: You decide if you want to keep it here or place it in a file -->
+    <script type='text/javascript'>
+        
+        cluster_btn = d3.select('#cluster-submit-btn');
+        centroid_btn = d3.select('#centroid-submit-btn');
+
+        function createCentroidTable() {
+
+            d3.json(`/user-clusters-data`).then(data => {
+
+                console.log(data);
+
+                tbody = d3.select('#tbody')
+
+                var num = 0 
+                
+                data.forEach(entry => {
+                    
+                        num += 1
+
+                        var row = tbody.append('tr');
+                        var cell = row.append('td');
+                        cell.text(num);
+                        var cell = row.append('td');
+                        cell.text(entry['Age']);
+                        var cell = row.append('td');
+                        cell.text(entry['Gender']);
+                        var cell = row.append('td');
+                        cell.text(entry['Known']);
+                        var cell = row.append('td');
+                        cell.text(entry['Understanding']);
+                        var cell = row.append('td');
+                        cell.text(entry['HaveInvested']);
+                        var cell = row.append('td');
+                        cell.text(entry['CryptoSafe']);
+                        var cell = row.append('td');
+                        cell.text(entry['CryptoConcern']);
+                        var cell = row.append('td');
+                        cell.text(entry['MoreRiskCryptoStock']);
+                    
+                }); 
+
+            });
+        }
+
+        function createMarketingTable() {
+
+            d3.json(`/user-clusters-data`).then(data => {
+
+                console.log(data);
+
+                tbody = d3.select('#tbody')
+
+                var num = 0 
+    
+                data.forEach(entry => {
+        
+                    num += 1
+
+                    var row = tbody.append('tr');
+                    var cell = row.append('td');
+                    cell.text(num);
+                    var cell = row.append('td');
+                    cell.text(entry['Age']);
+                    var cell = row.append('td');
+                    cell.text(entry['Gender']);
+                    var cell = row.append('td');
+                    cell.text(entry['Known']);
+                    var cell = row.append('td');
+                    cell.text(entry['Understanding']);
+                    var cell = row.append('td');
+                    cell.text(entry['HaveInvested']);
+                    var cell = row.append('td');
+                    cell.text(entry['CryptoSafe']);
+                    var cell = row.append('td');
+                    cell.text(entry['CryptoConcern']);
+                    var cell = row.append('td');
+                    cell.text(entry['MoreRiskCryptoStock']);
+        
+                 }); 
+
+            });
+        }
+
+        cluster_btn.on('click', createCentroidTable);
+        centroid_btn.on('click', createMarketingTable);
+
+    </script>
+
+
+</body>
+
+
+</html>
+
