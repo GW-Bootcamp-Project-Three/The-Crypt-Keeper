@@ -144,13 +144,22 @@ nav a, nav a:hover {
     font-family: 'nexa_blackregular'; 
 }
 
+/* .jumbotron #learnPage {
+    height: 70vh;
+} */
+
 #aboutteam {
     height: 40vh;   
 }
 
 #countryMap {
-    height: 40vh;
+    height: 50vh;
 }
+
+#comparePage {
+    height: 50vh;
+}
+
 
 /*Logo Overlay*/
 div.l1  { 
@@ -256,7 +265,12 @@ span.trans {
 }
 
 #reuslts-body img{
-    max-height: 40px;
+    max-height: 60px;
+}
+
+#reuslts-body td{
+    position: center;
+    
 }
 
 #coin {
@@ -281,6 +295,11 @@ span.trans {
     
     font-family: 'nexa_lightregular';
 }
+
+.coin-lookup {
+    padding-bottom: 2em;
+}
+
 /*#595753*/
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
@@ -328,8 +347,8 @@ span.trans {
 
 .coinsearch-results img {
     background-color:#fff;
-       padding:.25em; 
-       border-radius:50%;
+    padding:.25em; 
+    border-radius:50%;
 }
 
 .index-img img {
@@ -358,7 +377,6 @@ span.trans {
     display: block;
     min-height: 100px;
 }
-
 
 #coin-detail{
     min-height:50vh;
@@ -459,6 +477,19 @@ span.trans {
     color: #595753;
 }
 
+.predict-form input {
+    display: inline-block;
+
+}
+
+.predict-form #CoinName {
+    width: 80%;
+}
+
+.predict-form {
+    padding-bottom: 1em;
+    
+}
 
 /*Media Query */
 @media only screen and (min-width: 1200px) {

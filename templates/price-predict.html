@@ -20,7 +20,7 @@
     <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
         <div>
             <p> <span class='light'>crypt</span>keeper <br>
-                <span class='light'> PREDICT.</span>
+                predict<span class='light'> what a coin might to do</span>
             </p>
 
         </div>
@@ -47,11 +47,11 @@
     <div class="ckOrange contianer-fluid" id="price-predict-results">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 ">
-                    <label>Testing</label>
+                <div class="col-lg-12 predict-form">
+                    <label>Lookup Coin</label>
                     <!-- <form method="post" action="/price-prediction-data"> -->
                     <input class="form-control" id="CoinName" name="CoinName" type="text" placeholder="Enter Coin Name">
-                    <input type="button" id='prediction-submit-btn' value='Submit' >
+                    <input class='button' type="button" id='prediction-submit-btn' value='Submit' >
                     <!-- </form> -->
                     <br>
                 </div>
@@ -65,7 +65,7 @@
     </div>
 
     <div>
-        <div id='predictions-table'>
+        <div id='predictions-table' class='ckBlue'>
             <table class='table table-striped'>
                 <thead>
                     <th>Date</th>
@@ -75,7 +75,6 @@
             </table>
         </div>
     </div>
-
 
     <!-- Ticker -->
     {% include'ticker.html' %}

@@ -19,7 +19,7 @@
                     HTML += `<a href= '/coin/${element.CoinID}'>`
                         HTML += `<img src='${image}'/>`
                         HTML += `<span>${currency}</span>`
-                        HTML += `$<span>${price}</span>`
+                        HTML += `$<span class='format-tickPrice'>${price}</span>`
                     HTML += `</a>`
                 HTML += `</div>`
 
@@ -31,6 +31,17 @@
             $('.tickers').append(`${HTML}`)
             // plotloader(data);
             // barplotloader();
+            $('.format-tickPrice').each(function (i, ele) {
+                // console.log(ele)
+                $(ele).removeClass('format-tickPrice');
+                let number = $(ele).html();
+                if (number != '') {
+                    let formatNumber = formatNumbers(number);
+                    console.log(formatNumber)
+                    $(ele).html(formatNumber);
+                };
+
+            });
         
         });
     }
