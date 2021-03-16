@@ -235,12 +235,13 @@ def price_prediction_data():
     results = []
     best_aic = float("inf")
     warnings.filterwarnings('ignore')
-    for param in parameters_list:
-        try:
-            model=sm.tsa.statespace.SARIMAX(coin_history.Box, order=(param[0], d, param[1]), 
+    #for param in parameters_list:
+    param = parameters_list[0]
+    try:
+        model=sm.tsa.statespace.SARIMAX(coin_history.Box, order=(param[0], d, param[1]), 
                                         seasonal_order=(param[2], D, param[3], 12)).fit(disp=-1)
-        except:
-            print('Data cannot be conditioned for ARIMA model.  Sorry!') # Need to send this back to user
+    except:
+        print('Data cannot be conditioned for ARIMA model.  Sorry!') # Need to send this back to user
     aic = model.aic
     if aic < best_aic:
         best_model = model
