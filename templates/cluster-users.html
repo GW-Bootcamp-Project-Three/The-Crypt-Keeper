@@ -17,15 +17,28 @@
     {% include'nav.html' %}
 
     <!-- Jumbotron -->
-    <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
-        <div>
+    <div class="jumbotron ckOrange contianer-fluid" id="cluster">
+        <div class=''>
             <p> <span class='light'>crypt</span>keeper <br>
-                <span class='light'> Cluster</span>
+                predict<span class='light'> user cluster</span>
             </p>
-            Hit the button to calculate centroids<br>
-            <input type="button" id='cluster-submit-btn' value='Calculate' >
+            <!-- <label><span class='light'>click the button to calculate centroids</span></label> 
+            <input type="button" class='button' id='cluster-submit-btn' value='Calculate' > -->
         </div>
     </div>
+        <div class="ckOrange contianer-fluid" id="user-cluster">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 user-cluster-calc">
+                        <label>click button to calculate centroids</label>
+                        <input class='button' type="button" id='cluster-submit-btn' value='Calculate'>
+                        <!-- </form> -->
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
 
     <!-- Form submit with POST request
     <div class="ckOrange contianer-fluid" id="price-predict-results">
@@ -44,8 +57,8 @@
     </div>
     -->
 
-    <div>
-        <div id='predictions-table'>
+    <div class='contianer-fluid'>
+        <div id='predictions-table' class='ckBlue'>
             <table class='table table-striped'>
                 <thead>
                     <th>Centroid #</th>
@@ -68,10 +81,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <label>Which Looks Most Promising?</label>
+                    <label>which looks most promising?</label>
                     <!-- <form method="post" action="/price-prediction-data"> -->
                     <input class="form-control" id="CoinName" name="CoinName" type="text" placeholder="Enter Centroid Number">
-                    <input type="button" id='centroid-submit-btn' value='Submit' >
+                    <input class='button' type="button" id='centroid-submit-btn' value='Submit' >
                     <!-- </form> -->
                     <br>
                 </div>

@@ -148,6 +148,10 @@ nav a, nav a:hover {
     height: 70vh;
 } */
 
+#cluster {
+    height: 50vh;
+}
+
 #aboutteam {
     height: 40vh;   
 }
@@ -506,6 +510,21 @@ span.trans {
 .predict-form {
     padding-bottom: 1em;
     
+}
+
+.user-cluster-calc  {
+    display: inline-block;
+}
+
+.user-cluster-calc label {
+    font-size: 2em;
+    font-family: 'nexa_lightregular';
+    text-align: center;
+}
+
+#price-predict-results label {
+    font-size: 2em;
+    font-family: 'nexa_lightregular';
 }
 
 /*Media Query */
