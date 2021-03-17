@@ -555,9 +555,14 @@ span.trans {
     font-family: 'nexa_lightregular';
 }
 
-#price-predict-results #CoinName {
+#price-predict-results #CentroidChoice {
     width: 40%;
 }
+
+#centroid-table {
+    width: 100%;
+}
+
 #price-predict-results input{
     display: inline-block;
 }
