@@ -25,7 +25,7 @@ function addMarkers(data, map, stateForFiltering) {
         var lng = geometry.coordinates[0];
         var lat = geometry.coordinates[1];
         var title = Properties.Name;
-        var marker = L.marker(new L.LatLng(lat, lng), { title: title });
+        var marker = L.markers(new L.LatLng(lat, lng), { title: title });
         color_orange = 'rgb(250,110,50)';
         color_blue = 'rgb(10,60,80)';
         color_grey = 'rgb(90,90,90)';
@@ -34,7 +34,7 @@ function addMarkers(data, map, stateForFiltering) {
 
         markers.addLayer(marker);
     }
-    map.scrollWheelZoom.disable();
+    // map.scrollWheelZoom.disable();
     map.addLayer(markers);
     
    
@@ -49,7 +49,7 @@ function filterAndReAddMarkers(data, searchedState) {
 function do_map(data, stateForFiltering = null) {
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 5,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+        // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
     }),
         latlng = L.latLng(37.697, -97.314);
 
