@@ -425,6 +425,28 @@ span.trans {
 #learn {
     color: #595753;
 }
+#learn .img-full{
+    max-width:100%; 
+}
+#learn .company-logos img{
+    max-width:75px;
+    margin: 0px 1.5em 1em 0px;
+}
+#learn .faq button img{
+    max-width:320px;
+}
+#learn  .faq p{
+   text-align:left;
+}
+#learn div[class*='col-']{
+    text-align:center;
+}
+
+
+ 
+
+
+
 
 #about {
     color: #595753;
@@ -485,6 +507,12 @@ span.trans {
     display: inline-block;
     padding: .50em;
 }
+@media only screen and (max-width: 600px) {
+    .ticker-footer-wrapper {
+        display:none; 
+    }
+}
+
 
 #descripton {
     font-size: 18px;
@@ -579,10 +607,10 @@ dl.faq button {
   
   dl.faq .desc {
     margin: 0;
-    padding: 0.5em;
+    padding: 1.5em;
     font-size: 110%;
     display: none;
-    background-color: #fffedb;
+    background-color: rgba(0,0,0,.05); 
   }
   
   dl.faq button:hover,
@@ -611,3 +639,6 @@ dl.faq button {
     content: url('../images/down-arrow-brown.png');
     padding-right: 0.35em;
   }
+
+
+
