@@ -102,16 +102,27 @@
                     {% if 'rank' in market_data[0] %}
                     <br><label>Rank:</label> {{market_data[0].rank}} 
                     {% endif %}
+                    {% if 'num_exchanges' in market_data[0] %}
                     <br><label>Number of Exchanges:</label> {{market_data[0].num_exchanges}} 
+                    {% endif %}
+                    {% if 'first_trade' in market_data[0] %}
                     <br><label>First Trade (Y-M-D):</label>  {{market_data[0].first_trade[0:10]}} 
+                    {% endif %}
+                    {% if 'price' in market_data[0] %}
                     <br><label>Price:</label> $<span class='format-number'>{{market_data[0].price}}</span>
+                    {% endif %}
+                    {% if 'high' in market_data[0] %}
                     <br><label>High:</label> $<span class='format-number'>{{market_data[0].high}}</span>
+                    {% endif %}
+                    {% if 'circulation' in market_data[0] %}
                     <br><label>Circulation Supply:</label> <span class='format-number'>{{market_data[0].circulating_supply}}</span>
+                    {% endif %}
                     {% if 'max_supply' in market_data[0] %}
                     <br><label>Max Supply:</label> <span class='format-number'>{{market_data[0].max_supply}}</span>
                     {% endif %}
+                    {% if 'market_cap' in market_data[0] %}
                     <br><label>Market Cap</label> $<span class='format-number'>{{market_data[0].market_cap}}</span>
-                    
+                    {% endif %}
                 </div>
                 <div class='col-lg-3 '>
                     <h5>24 Hours</h5>

@@ -144,9 +144,9 @@ nav a, nav a:hover {
     font-family: 'nexa_blackregular'; 
 }
 
-/* .jumbotron #learnPage {
+#survey {
     height: 70vh;
-} */
+}
 
 #cluster {
     height: 50vh;
@@ -161,7 +161,7 @@ nav a, nav a:hover {
 }
 
 #comparePage {
-    height: 50vh;
+    height: 70vh;
 }
 
 
