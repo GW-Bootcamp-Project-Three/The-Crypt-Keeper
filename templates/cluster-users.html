@@ -17,28 +17,15 @@
     {% include'nav.html' %}
 
     <!-- Jumbotron -->
-    <div class="jumbotron ckOrange contianer-fluid" id="cluster">
-        <div class=''>
+    <div class="jumbotron ckOrange contianer-fluid" id="coinsearch">
+        <div>
             <p> <span class='light'>crypt</span>keeper <br>
-                predict<span class='light'> user cluster</span>
+                <span class='light'> Cluster</span>
             </p>
-            <!-- <label><span class='light'>click the button to calculate centroids</span></label> 
-            <input type="button" class='button' id='cluster-submit-btn' value='Calculate' > -->
+            Hit the button to calculate centroids<br>
+            <input type="button" id='centroid-submit-btn' value='Calculate' >
         </div>
     </div>
-        <div class="ckOrange contianer-fluid" id="user-cluster">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 user-cluster-calc">
-                        <label>click button to calculate centroids</label>
-                        <input class='button' type="button" id='cluster-submit-btn' value='Calculate'>
-                        <!-- </form> -->
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
 
     <!-- Form submit with POST request
     <div class="ckOrange contianer-fluid" id="price-predict-results">
@@ -57,8 +44,8 @@
     </div>
     -->
 
-    <div class='contianer-fluid'>
-        <div id='predictions-table' class='ckBlue'>
+    <div>
+        <div id='centroid-table'>
             <table class='table table-striped'>
                 <thead>
                     <th>Centroid #</th>
@@ -81,16 +68,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <label>which looks most promising?</label>
+                    <label>Which Looks Most Promising?</label>
                     <!-- <form method="post" action="/price-prediction-data"> -->
-                    <input class="form-control" id="CoinName" name="CoinName" type="text" placeholder="Enter Centroid Number">
-                    <input class='button' type="button" id='centroid-submit-btn' value='Submit' >
+                    <input class="form-control" id="CentroidChoice" name="CentroidChoice" type="text" placeholder="Enter Centroid Number">
+                    <input type="button" id='cluster-submit-btn' value='Submit' >
                     <!-- </form> -->
                     <br>
                 </div>
             </div>
         </div>
     </div>
+
+    <div>
+        <div id='cluster-table'>
+            <table class='table table-striped'>
+                <thead>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Known</th>
+                    <th>Understanding</th>
+                    <th>Have Invested</th>
+                    <th>Safe?</th>
+                    <th>Biggest Concern</th>
+                    <th>More Risky: Crypto or Stock?</th>
+                </thead>
+                <tbody id='cbody'></tbody>
+            </table>
+        </div>
+    </div>
+
 
     <!-- Ticker -->
     {% include'ticker.html' %}
@@ -101,22 +112,24 @@
     <!-- JavaScript code: You decide if you want to keep it here or place it in a file -->
     <script type='text/javascript'>
         
-        cluster_btn = d3.select('#cluster-submit-btn');
         centroid_btn = d3.select('#centroid-submit-btn');
+        cluster_btn = d3.select('#cluster-submit-btn');
+        centroid_choice_input = d3.select('#CentroidChoice')
 
         function createCentroidTable() {
 
-            d3.json(`/user-clusters-data`).then(data => {
+            d3.json(`/user-centroid-data`).then(data => {
 
                 console.log(data);
 
                 tbody = d3.select('#tbody')
+                tbody.html("");
 
                 var num = 0 
                 
                 data.forEach(entry => {
                     
-                        num += 1
+                        
 
                         var row = tbody.append('tr');
                         var cell = row.append('td');
@@ -137,29 +150,38 @@
                         cell.text(entry['CryptoConcern']);
                         var cell = row.append('td');
                         cell.text(entry['MoreRiskCryptoStock']);
-                    
+
+                        num += 1
+
                 }); 
 
             });
         }
 
-        function createMarketingTable() {
+        function createClustersTable() {
 
-            d3.json(`/user-clusters-data`).then(data => {
+            centroid_choice = centroid_choice_input.property('value');
+
+            d3.json(`/user-clusters-data?CentroidChoice=${centroid_choice}`).then(data => {
 
                 console.log(data);
 
-                tbody = d3.select('#tbody')
-
-                var num = 0 
+                cbody = d3.select('#cbody');
+                cbody.html("");
     
                 data.forEach(entry => {
         
-                    num += 1
-
-                    var row = tbody.append('tr');
+                    var row = cbody.append('tr');
                     var cell = row.append('td');
-                    cell.text(num);
+                    cell.text(entry['FirstName']);
+                    var cell = row.append('td');
+                    cell.text(entry['LastName']);
+                    var cell = row.append('td');
+                    cell.text(entry['City']);
+                    var cell = row.append('td');
+                    cell.text(entry['State']);
+                    var cell = row.append('td');
+                    cell.text(entry['Zip']);                    
                     var cell = row.append('td');
                     cell.text(entry['Age']);
                     var cell = row.append('td');
@@ -180,10 +202,10 @@
                  }); 
 
             });
-        }
+        };
 
-        cluster_btn.on('click', createCentroidTable);
-        centroid_btn.on('click', createMarketingTable);
+        centroid_btn.on('click', createCentroidTable);
+        cluster_btn.on('click', createClustersTable);
 
     </script>
 
