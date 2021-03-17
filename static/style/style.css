@@ -532,7 +532,7 @@ span.trans {
 }
 
 .predict-form #CoinName {
-    width: 80%;
+    width: 60%;
 }
 
 .predict-form {
@@ -553,6 +553,13 @@ span.trans {
 #price-predict-results label {
     font-size: 2em;
     font-family: 'nexa_lightregular';
+}
+
+#price-predict-results #CoinName {
+    width: 40%;
+}
+#price-predict-results input{
+    display: inline-block;
 }
 
 /*Media Query */

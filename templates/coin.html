@@ -21,8 +21,9 @@
                         <h1>{{coin_view[0].CoinName}} ({{coin_view[0].TokenName}})</h1> 
                     </div>
                         <div class='row'>
- 
+                        {% if 'price' in market_data[0] %}
                         <h4>Price: $<span class='format-number'>{{market_data[0].price}}</span></h4>
+                        {% endif %}
 
                         </div>
                     <div class='row' id='descripton'>   
@@ -98,7 +99,9 @@
                     <label>Status:</label> {{market_data[0].status}} 
                     {% else %} Status Data Not Available From API
                     {% endif %}
+                    {% if 'rank' in market_data[0] %}
                     <br><label>Rank:</label> {{market_data[0].rank}} 
+                    {% endif %}
                     <br><label>Number of Exchanges:</label> {{market_data[0].num_exchanges}} 
                     <br><label>First Trade (Y-M-D):</label>  {{market_data[0].first_trade[0:10]}} 
                     <br><label>Price:</label> $<span class='format-number'>{{market_data[0].price}}</span>
