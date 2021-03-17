@@ -319,6 +319,21 @@ span.trans {
 
 .coin-lookup {
     padding-bottom: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.coin-lookup #coin-filter{
+    width: 50%;
+    
+}
+.coin-lookup label {
+    font-size: 2em;
+    font-family: 'nexa_lightregular';   
+}
+
+.coin-lookup input {
+    display: inline-block;
 }
 
 /*#595753*/
@@ -566,6 +581,8 @@ span.trans {
 #price-predict-results input{
     display: inline-block;
 }
+
+
 
 /*Media Query */
 @media only screen and (min-width: 1200px) {
