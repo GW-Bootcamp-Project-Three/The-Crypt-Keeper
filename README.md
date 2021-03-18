@@ -38,7 +38,7 @@ You may also find visualizations depicting various user data grouped by age:
 * What are Crypto Concerns?
 * What is more Risky: Crypto vs. Stock?
 
-![userdata](https://user-images.githubusercontent.com/70446836/111554420-b2b6d680-875c-11eb-972a-8bf7150ebd67.JPG)
+<img width="967" alt="Screen Shot 2021-03-07 at 8 44 38 PM" src="https://user-images.githubusercontent.com/71414243/110264206-c1480580-7f86-11eb-8d1d-e08e538fe20e.png">
 
 **Where is Cryptocurrency Legal** 
 Check out our tableau generated world map to view in which countries is cryptocurrency illegal, legal, or somehow restricted. 
@@ -48,7 +48,8 @@ Check out our tableau generated world map to view in which countries is cryptocu
 **Cryptocurrency Comparison**
 Curious about the most popular cryptocurrencies on the market and how they differ from one another? Check our our interactive Comparison page! Here you will be able to compare up to four coins with the following facts: Closing Price, Opening Price, Record Date, Change in Price, and whether or not the price is increasing. 
 
-<img width="967" alt="Screen Shot 2021-03-07 at 8 44 38 PM" src="https://user-images.githubusercontent.com/71414243/110264206-c1480580-7f86-11eb-8d1d-e08e538fe20e.png">
+![compare](https://user-images.githubusercontent.com/70446836/111555035-e5ad9a00-875d-11eb-8044-e3cd2dbfd6fa.JPG)
+
 
 **Price Predict** 
 Enter a coin name to predict .....
