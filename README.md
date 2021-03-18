@@ -12,7 +12,7 @@ Use our search feature to decide where you want to invest next!
 **Cryptocurrency 101**
 Feeling lost and need some guidance? That is completely understandable! Cryptocurrency can be a bit of a challenge and may intimidate new users to understand the whole aspect of digital money. However, fear not, as our team has broken it down into simpler terms on our Cryptocurrency 101 page.  
 
-<img width="1081" alt="Screen Shot 2021-03-07 at 8 43 32 PM" src="https://user-images.githubusercontent.com/71414243/110264096-75955c00-7f86-11eb-8abd-bf6796e17ad7.png">
+![learn](https://user-images.githubusercontent.com/70446836/111554890-97989680-875d-11eb-8973-8b4e53cb56d5.JPG)
 
 **Lookup a Coin**
 Our team has built a look-up feature on most of the popular cryptocurrencies. This is great for those who are interested in buying or trading new cryptocurrencies and would like to learn more about what is currently on the market. 
