@@ -147,6 +147,15 @@ def map():
     return render_template("map.html", accessToken=accessToken)
 
 
+@app.route("/exchanges")
+def exchanges():
+    
+    dfe = get_dataframe_from_db('exchangeList')
+    exchanges = dfe.to_dict(orient='records')
+
+    return render_template("exchanges.html", exchanges=exchanges)
+
+
 @app.route("/api/ticker", methods=['GET'])
 def ticker():
     response = requests.get('https://crypt-keeper.herokuapp.com/api/view/vwCoins')

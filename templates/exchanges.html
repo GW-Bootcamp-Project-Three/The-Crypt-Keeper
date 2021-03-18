@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>CryptKeeper: Predict Price</title>
+
+    {% include'head.html' %}
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    {% include'nav.html' %}
+
+    <!-- Jumbotron -->
+    <div class="jumbotron ckOrange contianer-fluid" id="exchange">
+        <div>
+            <p> <span class='light'>crypt</span>keeper <br>
+                discover<span class='light'> where to buy cryptocurrency</span>
+            </p>
+            <a class="button" href="#exchange-table">EXCHANGES</a><br>
+
+        </div>
+    </div>
+
+   <div class='container-fluid' id='exchange-table'>
+    <div class=" circ-logo-wrapper"><img src="static/images/icons/discover.png" class='pagebm'></div>
+       <div class='container'>
+        <table class='exchange-table'>
+            <thead id='results-head'>
+                <th>Logo</th>
+                <th>Exchange</th>
+                <th>Score</th>
+                <th>Pros</th>
+                <th>Cons</th>
+            </thead>
+
+            {% for record in exchanges %}
+            <tr> 
+                <td> <a href="{{record.Link}}"> <img src="{{record.logo}}" alt="" target='_blank'></a></td>
+                <td>{{record.Name}}</td>
+                <td>{{record.Score}}</td>
+                <td>{{record.Pros}}</td>
+                <td>{{record.Cons}}</td>
+        
+                </tr>
+
+            {% endfor %}
+
+         </table>
+    </div>
+</div>
+
+    <!-- Ticker -->
+    {% include'ticker.html' %}
+    <!-- Footer -->
+    {% include'footer.html' %}
+
+
+    </script>
+
+
+</body>
+
+
+</html>

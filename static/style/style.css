@@ -453,7 +453,7 @@ span.trans {
     margin: 0px 1.5em 1em 0px;
 }
 #learn .faq button img{
-    max-width:320px;
+    max-width:200px;
 }
 #learn  .faq p{
    text-align:left;
@@ -462,7 +462,30 @@ span.trans {
     text-align:center;
 }
 
+#learn  .faq h5{
+   /* font-family: 'nexa_lightregular'; */
+   text-align: center;
+   color: #595753;
 
+}
+
+.exchange-table img {
+    max-width: 100px;
+}
+
+.exchange-table td {
+    border-bottom: #595753 solid 1px ;
+    padding: 1em 1em ;
+    font-family: 'nexa_lightregular';
+    font-size: 16px;
+}
+
+.exchange-table th {
+    border-bottom: #595753 solid 3px ;
+    padding: 1em 0em ;
+    
+    font-size: 18px;
+}
  
 
 
