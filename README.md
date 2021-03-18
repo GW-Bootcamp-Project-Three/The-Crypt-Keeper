@@ -1,5 +1,6 @@
 # The-Crypt-Keeper
-<img width="1433" alt="Screen Shot 2021-03-07 at 8 43 11 PM" src="https://user-images.githubusercontent.com/71414243/110264019-4979db00-7f86-11eb-847a-584f1efa360d.png">
+![landing](https://user-images.githubusercontent.com/70446836/111554783-6029ea00-875d-11eb-9457-d6258be7492e.JPG)
+
 
 ## Our Mission
 The Crypt-Keepers is the one stop place for all cryptocurrency needs for all newcomers and experienced buyers! Our team is full of highly advanced data scientists who provide the most updated data out there, just for you! We have created an application that can help guide you to the right cryptocurrency that will fit all your requirements. We feel that everyone should be fully equiped and encouraged to enter this new currency world as it continues to expand! One should feel confident in their ability and have a solid understanding - what better way to do that with an easy one stop application! 
@@ -14,11 +15,11 @@ Feeling lost and need some guidance? That is completely understandable! Cryptocu
 <img width="1081" alt="Screen Shot 2021-03-07 at 8 43 32 PM" src="https://user-images.githubusercontent.com/71414243/110264096-75955c00-7f86-11eb-8abd-bf6796e17ad7.png">
 
 **Lookup a Coin**
-Our team has built a look-up feature on most of the popular cryptocurrencies. This is great for those who are interested in buying or trading new cryptocurrencies and want to learn more about what is currently on the market. 
+Our team has built a look-up feature on most of the popular cryptocurrencies. This is great for those who are interested in buying or trading new cryptocurrencies and would like to learn more about what is currently on the market. 
 
 <img width="1020" alt="Screen Shot 2021-03-07 at 8 43 50 PM" src="https://user-images.githubusercontent.com/71414243/110264131-8cd44980-7f86-11eb-8760-db1c9e732ec3.png">
 
-It also prvides important information regarding the cryptocurrency of your choice to get your mind thinking.
+It also provides important information regarding the cryptocurrency of your choice to get your mind thinking.
 <img width="1303" alt="Screen Shot 2021-03-07 at 8 44 21 PM" src="https://user-images.githubusercontent.com/71414243/110264180-abd2db80-7f86-11eb-8b6c-54aae56f376c.png">
 
 **ATM Map**
@@ -64,7 +65,7 @@ https://crypt-keeper.herokuapp.com/
 
 Redeat Bekele
 
-Desiree Herschnberger (Des)
+Desiree Herschberger (Des)
 
 Sveena Sharma
 
