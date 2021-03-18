@@ -490,7 +490,7 @@ span.trans {
         width: 100vw;
         z-index: 4;
         background-color: rgba(61, 55, 58, .6);
-        padding: .5em .5em;
+        padding: .1em .1em;
         color: #fff;
         z-index: 999;
     }
