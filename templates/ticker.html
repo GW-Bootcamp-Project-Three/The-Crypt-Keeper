@@ -3,31 +3,28 @@
 
     </div>
 </div>
-
-  
+ 
 <script>
     function get_ticker() {
         d3.json('/api/ticker').then((data) => {
-            let HTML = '';
+            let HTML = '<div class="tcontainer"><div class="ticker-wrap"><div class="ticker-move">';
             data.forEach(element => {
                 //console.log(element)
                 let currency = element.currency;
                 let image = element.logo_url;
                 let price = element.price;
-                // console.log(image);
-                HTML += `<div class='col-md-2'>`
+                
+                HTML += `<div class='ticker-item '>`
                     HTML += `<a href= '/coin/${element.CoinID}'>`
                         HTML += `<img src='${image}'/>`
                         HTML += `<span>${currency}</span>`
                         HTML += `$<span class='format-tickPrice'>${price}</span>`
                     HTML += `</a>`
                 HTML += `</div>`
-
-
-
-
+ 
                 //$('.tickers').append(`<div class='col-md-3'><h6>${element.currency}<h6></div>`)
             });
+            HTML += `</div></div></div>`
             $('.tickers').append(`${HTML}`)
             // plotloader(data);
             // barplotloader();
@@ -45,8 +42,6 @@
         
         });
     }
-
-
-
+ 
     get_ticker()
 </script>

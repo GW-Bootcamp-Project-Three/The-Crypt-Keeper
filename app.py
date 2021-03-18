@@ -137,7 +137,7 @@ def get_db_view_kv(db_view_name, key, val):
 def surveyview():
     id = 0
     if request.method == 'POST':
-        id = insert_user(request)
+        id = insert_user(request) 
  
     return render_template("surveyview.html", userid=id)
 
@@ -151,7 +151,7 @@ def map():
 def ticker():
     response = requests.get('https://crypt-keeper.herokuapp.com/api/view/vwCoins')
     tdf = pd.DataFrame(response.json())
-    Coins = tdf['TokenName'][0:6]
+    Coins = tdf['TokenName'][0:42]
     CoinList = Coins.astype(str).values.tolist()
     Token = ','.join(CoinList)
     # print(Token)

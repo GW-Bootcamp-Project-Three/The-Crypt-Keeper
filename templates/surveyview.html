@@ -23,6 +23,9 @@
             </p> 
             <a class="button" href="#user-data">DATA</a><br>
         </div>
+        {%if userid > 0 %}
+           <h2> thank you for adding your two cents</h2>
+        {%endif%}
     </div> 
         <div class=" contianer-fluid">
             <div class=" circ-logo-wrapper"><img src="static/images/icons/discover.png" class='pagebm'></div>
@@ -34,15 +37,15 @@
                 <form class="row g-3" method="POST" action="/surveyview">
                     <div class="col-md-6">
                       <label for="FirstName" class="form-label">First Name</label>
-                      <input type="FirstName" class="form-control" id="FirstName">
+                      <input type="FirstName" class="form-control" id="FirstName" name='FirstName'>
                     </div>
                     <div class="col-md-6">
                       <label for="LastName" class="form-label">Last Name</label>
-                      <input type="LastName" class="form-control" id="LastName">
+                      <input type="LastName" class="form-control" id="LastName" name='LastName'>
                     </div>
                     <div class="col-12">
                       <label for="LevelUnderstanding" class="form-label">Level of Understanding</label>
-                      <select id="LevelUnderstanding" class="form-select">
+                      <select id="LevelUnderstanding" class="form-select" name='LevelUnderstanding'>
                         <option selected>Choose...</option>
                         <option>Not Understood</option>
                         <option>Somewhat Understood</option>
@@ -52,7 +55,7 @@
                     </div>
                     <div class="col-md-12" id='user-data'>
                         <label for="RiskTolerance" class="form-label">What is your risk tolerance?</label>
-                        <select id="RiskTolerance" class="form-select">
+                        <select id="RiskTolerance" class="form-select" name='RiskTolerance'>
                           <option selected>Choose...</option>
                           <option>Low</option>
                           <option>High</option>
@@ -61,7 +64,7 @@
                       </div>
                     <div class="col-md-12">
                         <label for="HaveInvested" class="form-label">Have You Invested?</label>
-                        <select id="Gender" class="form-select">
+                        <select id="HasInvested" class="form-select" name='HasInvested'>
                           <option selected>Choose...</option>
                           <option>Yes</option>
                           <option>No</option>
@@ -70,11 +73,11 @@
                       </div>
                     <div class="col-md-4">
                       <label for="Age" class="form-label">Age</label>
-                      <input type="text" class="form-control" id="Age">
+                      <input type="text" class="form-control" id="Age" name='Age'>
                     </div>
                     <div class="col-md-4">
                       <label for="Gender" class="form-label">Gender</label>
-                      <select id="Gender" class="form-select">
+                      <select id="Gender" class="form-select" name='Gender'>
                         <option selected>Choose...</option>
                         <option>Female</option>
                         <option>Male</option>
@@ -83,11 +86,11 @@
                     </div>
                     <div class="col-md-4">
                       <label for="ZipCode" class="form-label">Zip Code</label>
-                      <input type="text" class="form-control" id="ZipCode">
+                      <input type="text" class="form-control" id="ZipCode" name='ZipCode'>
                     </div>
                     <div class="col-12">
                         <label for="Concern" class="form-label">Concerns?</label>
-                        <select id="Concern" class="form-select">
+                        <select id="Concern" class="form-select" name='Concern'>
                             <option selected>Choose...</option>
                             <option>Fraud</option>
                             <option>Lack of Regulation</option>

@@ -68,5 +68,22 @@ def get_dataframe_from_db(db_view_name):
 
 # Insert User functin
 def insert_user(req):
-    print(req.method)
-    return 0
+    sql = """
+    INSERT INTO 
+        UserProfile(FirstName, LastName, Age, Gender, ZipCode, RiskTolerance, LevelUnderstanding, 
+        HasInvested, Concern)
+    VALUES 
+        (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+        """
+    val = (req.form['FirstName'], req.form['LastName'], req.form['Age'], req.form['Gender'], 
+    req.form['ZipCode'], req.form['RiskTolerance'], req.form['LevelUnderstanding'], 
+    req.form['HasInvested'], req.form['Concern'])
+    mycursor.execute(sql, val)
+    conn.commit()
+    userid = mycursor.lastrowid
+    
+    if userid == None:
+        userid = 0
+    conn.close()
+    print(userid)
+    return userid
