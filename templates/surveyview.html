@@ -124,7 +124,7 @@
     plotloader("vwSurveyHaveInvested", "HaveInvested", "Who Invests?");
     plotloader("vwSurveyCryptoSafe", "CryptoSafe", "Who Considers Crypto Safe?");
     plotloader("vwSurveyCryptoConcern", "CryptoConcern", "What are Crypto Concerns?");
-    plotloader("vwSurveyMoreRiskCryptoStock", "MoreRiskCryptoStock", "What is more risky Crypo vs. Stock?");
+    plotloader("vwSurveyMoreRiskCryptoStock", "MoreRiskCryptoStock", "What is more risky Crypto vs. Stock?");
     function plotloader(view, colkey, ptitle) {
 
         d3.json(`/api/view/${view}`).then((data) => {
