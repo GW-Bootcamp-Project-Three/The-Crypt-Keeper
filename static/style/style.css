@@ -662,12 +662,19 @@ span.trans {
 }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 650px) 
+{
   .jumbotron {
     font-size: 1.5em; 
     padding: 200px 1em 1em ;
     
-}
+    }
+  .coinhistory{
+    font-size: .55em;
+    }
+    .coin-detail {
+    padding: 1em;
+    }
 }
 /* 
 Crypto 101 format  */
