@@ -593,6 +593,10 @@ span.trans {
     
 }
 
+#user-cluster {
+    text-align: center;
+}
+
 .user-cluster-calc  {
     display: inline-block;
 }
@@ -600,6 +604,10 @@ span.trans {
 .user-cluster-calc label {
     font-size: 2em;
     font-family: 'nexa_lightregular';
+    text-align: center;
+}
+
+#price-predict-results {
     text-align: center;
 }
 
