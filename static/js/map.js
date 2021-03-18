@@ -2,7 +2,7 @@ var map;
 var markers = L.markerClusterGroup();
 
 d3.json("/static/js/ATM.json", function (data) {
-    //console.log(data);
+    // console.log(data);
     do_map(data);
 
     document.getElementById('stateFilterSearchButton').addEventListener('click', function () {
@@ -29,12 +29,12 @@ function addMarkers(data, map, stateForFiltering) {
         color_orange = 'rgb(250,110,50)';
         color_blue = 'rgb(10,60,80)';
         color_grey = 'rgb(90,90,90)';
-        marker
+        markers.addLayer(L.marker([lat, lng])
             .bindPopup(`<h3>${feature.Properties.Address}</h3><hr>${(feature.Properties.Name)}<hr>${(feature.Properties.Hours)}`);
 
         markers.addLayer(marker);
     }
-    // map.scrollWheelZoom.disable();
+    map.scrollWheelZoom.disable();
     map.addLayer(markers);
     
    
@@ -45,17 +45,32 @@ function filterAndReAddMarkers(data, searchedState) {
     addMarkers(data, map, searchedState);
     
 }
+// Creating map object
+var myMap = L.map("map", {
+    center: [37.697, -97.314],
+    zoom: 5
+  });
+  ​
+  // Adding tile layer to the map
+  L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    tileSize: 512,
+    maxZoom: 18,
+    zoomOffset: -1,
+    id: "mapbox/streets-v11",
+    accessToken: API_KEY
+  }).addTo(myMap);
 
-function do_map(data, stateForFiltering = null) {
-    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 5,
-        // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
-    }),
-        latlng = L.latLng(37.697, -97.314);
+// function do_map(data, stateForFiltering = null) {
+//     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         maxZoom: 5,
+//         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+//     }),
+//         latlng = L.latLng(37.697, -97.314);
 
-    map = L.map('map', { center: latlng, zoom: 5, layers: [tiles] });
-    map.scrollWheelZoom.disable();
-    addMarkers(data, map);
+//     map = L.map('map', { center: latlng, zoom: 5, layers: [tiles] });
+//     map.scrollWheelZoom.disable();
+//     addMarkers(data, map);
     
-}
+// }
 
