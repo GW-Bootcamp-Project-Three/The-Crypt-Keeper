@@ -123,11 +123,19 @@ a:hover {
  color: #f3723a;
 }
 
-nav a, nav a:hover {
+nav a {
     color: #fff;
     font-family: 'nexa_lightregular';
     font-size: 1.3em;
+    transition-duration: 1s;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
 }
+
+nav a:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 1);
+    color: #fff;;
+}
+
 .absolute-wrapper{
     content:''; position: absolute;overflow: hidden;     
     top: 0; left: 0; bottom: 0;  right: 0;    
@@ -269,9 +277,6 @@ footer {
     margin: -10px 4px  0px 4px;
 }
 
-nav a:hover {
-    border-bottom: 3px solid #fff;
-}
 
 span.light {
     font-family: 'nexa_lightregular';
@@ -509,6 +514,12 @@ span.trans {
     display: inline-block;
 }
 
+.ticker-footer-wrapper a img {
+     transition-duration: 1s;
+}
+.ticker-footer-wrapper a:hover img {
+    max-width: 50px;
+}
 .ticker-footer-wrapper .col-md-2 {
     transition-duration: .5s;
 }

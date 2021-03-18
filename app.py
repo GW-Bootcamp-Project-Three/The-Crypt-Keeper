@@ -151,7 +151,7 @@ def map():
 def ticker():
     response = requests.get('https://crypt-keeper.herokuapp.com/api/view/vwCoins')
     tdf = pd.DataFrame(response.json())
-    Coins = tdf['TokenName'][0:42]
+    Coins = tdf['TokenName'][0:100]
     CoinList = Coins.astype(str).values.tolist()
     Token = ','.join(CoinList)
     # print(Token)
