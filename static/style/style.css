@@ -490,14 +490,23 @@ span.trans {
         width: 100vw;
         z-index: 4;
         background-color: rgba(61, 55, 58, .6);
-        padding: .75em 1em;
+        padding: .5em .5em;
         color: #fff;
         z-index: 999;
     }
 
+.ticker-footer-wrapper .col1 {
+    max-width: 10%;
+}
+
+.ticker-footer-wrapper .col2 {
+    max-width: 90%;
+}
+
 .ticker-footer-wrapper a {
     color: #fff;
     transition-duration: 1s;
+    display: inline-block;
 }
 
 .ticker-footer-wrapper .col-md-2 {
@@ -617,7 +626,7 @@ span.trans {
 }
 
 #price-predict-results #CentroidChoice {
-    width: 40%;
+    width: 20%;
 }
 
 #centroid-table {
