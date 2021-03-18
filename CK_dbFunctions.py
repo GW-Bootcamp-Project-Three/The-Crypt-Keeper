@@ -64,3 +64,9 @@ def get_dataframe_from_db(db_view_name):
     conn.close()
     return df
 
+
+
+# Insert User functin
+def insert_user(req):
+    print(req.method)
+    return 0

@@ -12,7 +12,7 @@ from collections import Counter
 import plotly.express as px
 from plotly import graph_objects as go
 from plotly.tools import FigureFactory as FF
-from CK_dbFunctions import view_exists, get_dataframe_from_db
+from CK_dbFunctions import view_exists, get_dataframe_from_db, insert_user
 
 # Imports added by TK for machine learning
 from itertools import product
@@ -133,9 +133,13 @@ def get_db_view_kv(db_view_name, key, val):
     return resp
 
 
-@app.route("/surveyview")
+@app.route("/surveyview", methods=['GET', 'POST'])
 def surveyview():
-    return render_template("surveyview.html")
+    id = 0
+    if request.method == 'POST':
+        id = insert_user(request)
+ 
+    return render_template("surveyview.html", userid=id)
 
 
 @app.route("/map")
