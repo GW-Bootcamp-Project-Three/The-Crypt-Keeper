@@ -22,7 +22,7 @@ var myMap = L.map("map", {
     shadowSize: [41, 41]
   });
   
-  url = 'ATMdata.json'
+  url = '/static/js/ATMdata.json'
     
   // Grab the data with d3
   d3.json(url, function(response) {
