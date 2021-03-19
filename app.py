@@ -425,7 +425,7 @@ def user_centroid_data():
     attributes = users[attribute_list]
 
     # Cluster users
-    model = KModes(n_clusters=3, init='Huang', n_init=5, verbose=1, random_state=4)
+    model = KModes(n_clusters=3, init='Huang', n_init=1, verbose=1, random_state=4)
     clusters = model.fit_predict(attributes)
 
     # Identify centroids
@@ -464,7 +464,7 @@ def user_clusters_data():
     attributes = users[attribute_list]
 
     # Cluster users
-    model = KModes(n_clusters=3, init='Huang', n_init=5, verbose=1, random_state=4)
+    model = KModes(n_clusters=3, init='Huang', n_init=1, verbose=1, random_state=4)
     clusters = model.fit_predict(attributes)
 
     # Identify centroids
