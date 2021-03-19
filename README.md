@@ -61,8 +61,12 @@ Discover where to buy and trade cryptocurrency!
 **Price Predict** 
 Enter a coin name to predict the price forecast. 
 
+![predictprice](https://user-images.githubusercontent.com/70446836/111847520-5a5c1200-88df-11eb-8e01-336e501ad8ae.JPG)
+
 **Predict User Cluster**
 Select a specific user cluster based on our interactive crypto map to review particular factors on a deeper level. 
+
+![predictusers](https://user-images.githubusercontent.com/70446836/111847598-837ca280-88df-11eb-84d2-84f56b7c1f9d.JPG)
 
 ## Deployment
 The app is deployed in Heroku in order to access the page click the following link
