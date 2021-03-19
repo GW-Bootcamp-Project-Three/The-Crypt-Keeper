@@ -430,7 +430,8 @@ def user_centroid_data():
 
     # Identify centroids
     centroids = pd.DataFrame(model.cluster_centroids_, columns=attribute_list)
-    attributes['cluster'] = clusters
+    attributes.insert(0, "cluster", clusters, False) 
+ #   attributes['cluster'] = clusters
     marketing_df = people.merge(attributes, how='inner', left_index=True, right_index=True)
 
     _json = centroids.to_json(orient='records')
@@ -468,7 +469,8 @@ def user_clusters_data():
 
     # Identify centroids
     centroids = pd.DataFrame(model.cluster_centroids_, columns=attribute_list)
-    attributes['cluster'] = clusters
+    attributes.insert(0, "cluster", clusters, False) 
+ #   attributes['cluster'] = clusters
     marketing_df = people.merge(attributes, how='inner', left_index=True, right_index=True)
     print(centroid_choice)
     marketing_targets = marketing_df[marketing_df.cluster == int(centroid_choice)]
