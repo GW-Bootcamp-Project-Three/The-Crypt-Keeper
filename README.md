@@ -52,6 +52,11 @@ Curious about the most popular cryptocurrencies on the market and how they diffe
 
 ![compare](https://user-images.githubusercontent.com/70446836/111555035-e5ad9a00-875d-11eb-8044-e3cd2dbfd6fa.JPG)
 
+**Where to Buy**
+Discover where to buy and trade cryptocurrency! 
+
+![buy](https://user-images.githubusercontent.com/70446836/111847023-6398af00-88de-11eb-8241-63cc632f67d4.JPG)
+
 
 **Price Predict** 
 Enter a coin name to predict the price forecast. 
