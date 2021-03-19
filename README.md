@@ -27,6 +27,7 @@ It also provides important information regarding the cryptocurrency of your choi
 **ATM Map**
 Discover a crypto ATM near you! Search using our interactive map.
 
+![map](https://user-images.githubusercontent.com/70446836/111847777-ea9a5700-88df-11eb-8bf9-8acb581f3ba9.JPG)
 
 **User Data** 
 If you would like to become a crypt keeper, please participate in our user survey! Here you can input your level of understanding, risk tolerance, any concerns you may off regarding cryptocurrency, and other items. 
@@ -56,7 +57,6 @@ Curious about the most popular cryptocurrencies on the market and how they diffe
 Discover where to buy and trade cryptocurrency! 
 
 ![buy](https://user-images.githubusercontent.com/70446836/111847023-6398af00-88de-11eb-8241-63cc632f67d4.JPG)
-
 
 **Price Predict** 
 Enter a coin name to predict the price forecast. 
