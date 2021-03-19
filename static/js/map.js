@@ -53,7 +53,7 @@ var markers = L.markerClusterGroup({
     maxClusterRadius: 10
 });
 
-d3.json("/static/js/ATMdata.Json", function (data) {
+d3.json("/static/js/ATMdata.Json", function(data) {
     // console.log(data);
     do_map(data);
 

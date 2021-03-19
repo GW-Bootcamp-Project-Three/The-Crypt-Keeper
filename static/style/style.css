@@ -550,6 +550,7 @@ span.trans {
 }
 .ticker-footer-wrapper a:hover img {
     max-width: 50px;
+     color: #f3723a;
 }
 .ticker-footer-wrapper .col-md-2 {
     transition-duration: .5s;
