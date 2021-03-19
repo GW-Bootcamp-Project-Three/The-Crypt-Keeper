@@ -3,57 +3,6 @@
 
 <head>
   {% include'head.html' %}
-  
-
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin="" />
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
-  
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="static/style/map.css">
-
-  <!-- Marker Cluster JS & CSS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/leaflet.markercluster.js"
-    integrity="sha512-pWPELjRaw2ZdoT0PDi7iRpRlk1XX3rtnfejJ/HwskyojpHei+9hKpwdphC4yssNt4FM0TjMQOmMrk6ZYSn274w=="
-    crossorigin="anonymous"></script>
-
-
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.css"
-    integrity="sha512-6ZCLMiYwTeli2rVh3XAPxy3YoR5fVxGdH/pz+KMCzRY2M65Emgkw00Yqmhh8qLGeYQ3LbVZGdmOX9KUjSKr0TA=="
-    crossorigin="anonymous" />
-  
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.min.css"
-    integrity="sha512-fYyZwU1wU0QWB4Yutd/Pvhy5J1oWAwFXun1pt+Bps04WSe4Aq6tyHlT4+MHSJhD8JlLfgLuC4CbCnX5KHSjyCg=="
-    crossorigin="anonymous" />
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.css"
-    integrity="sha512-mQ77VzAakzdpWdgfL/lM1ksNy89uFgibRQANsNneSTMD/bj0Y/8+94XMwYhnbzx8eki2hrbPpDm0vD0CiT2lcg=="
-    crossorigin="anonymous" />
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.min.css"
-    integrity="sha512-ENrTWqddXrLJsQS2A86QmvA17PkJ0GVm1bqj5aTgpeMAfDKN2+SIOLpKG8R/6KkimnhTb+VW5qqUHB/r1zaRgg=="
-    crossorigin="anonymous" />
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/leaflet.markercluster-src.js"
-    integrity="sha512-w723zcYYjSbDiK8aVmNSoCudkQDrmZF8tcZdaQ5F45WOiyupwNRm4heoQmXhEd0dfFJBnn8i347T7Aamg29PzQ=="
-    crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/leaflet.markercluster-src.min.js"
-    integrity="sha512-aEMGwcHMGYn+Ctwcw0qhmIsZnjfkZRSBv00CWyTRVQl7KcoQSJHbyYyU2ZldYEUkpI9GMwKCxtmB6YeTHiD2CQ=="
-    crossorigin="anonymous"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/leaflet.markercluster.min.js"
-    integrity="sha512-8/nLM89o+U+gWYH4orGbC8qlD/3A4JGHarcJ+PSkrkJ3r2a9/2GdXZNidl5pcBvZ/AGqUiBLBg3BUBH4sUzXow=="
-    crossorigin="anonymous"></script>
-
-</head>
 
 <body class='ckOrange' id='page-map'>
 
@@ -76,14 +25,55 @@
 
     <div id="map"></div>
 
+    <!-- Leaflet CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+ integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+ crossorigin=""/>
 
+ <!-- Marker Cluster CSS -->
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+ <link rel="stylesheet" type="text/css" href="../style/style.css">
 
-              
-    <!-- Our JS -->
-    <script type="text/javascript" src="static/js/mapConfig.js"></script>
-    <script type="text/javascript" src="static/js/map.js"></script>
-    
-  
+</head>
+<body>
+
+ <div id="map" style='height: 1400px'></div>
+
+ <!-- Leaflet JS -->
+ <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+ integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+ crossorigin=""></script>
+ <!-- d3 JS -->
+ <script src="https://d3js.org/d3.v4.min.js"></script>
+
+ <!-- Marker Cluster JS -->
+ <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+ <!-- Our JS -->
+ <script type="text/javascript" src="../js/map.js"></script>
+
+</body>
+</html>
+
+<!-- <body>
+ <div id="map"></div>
+ <div id="searchArea">
+   <input placeholder="Enter a zip code" id="zipCodeFilterInput"/>
+   <button id="zipCodeFilterSearchButton">Filter results by zip code</button>
+ </div> -->
+
+ <style>
+   #map {
+     width: 80vw;
+     float: left;
+   }
+
+   #searchArea {
+     float: left;
+   }
+ </style>
+
   <!-- Ticker -->
   <!-- {% include'ticker.html' %} -->
   <!-- Footer -->
@@ -94,4 +84,4 @@
 </html>
 
 
-
+   
