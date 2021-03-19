@@ -2,7 +2,7 @@
 var map;
 var markers = L.markerClusterGroup();
 
-d3.json("static/js/ATMdata.json", function(data) {
+d3.json("static/js/ATM.json", function(data) {
     //console.log(data);
     do_map(data);
 
