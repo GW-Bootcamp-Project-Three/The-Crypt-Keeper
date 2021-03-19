@@ -779,5 +779,21 @@ dl.faq button {
     padding-right: 0.35em;
   }
 
-
-
+.marker-cluster-small {
+background-color: rgba(216, 138, 49, 1);
+}
+.marker-cluster-small div {
+background-color: rgba(216, 138, 49, 1);
+}
+.marker-cluster-medium {
+background-color: rgba(216, 138, 49, 1);
+}
+.marker-cluster-medium div {
+background-color: rgba(216, 138, 49, 1);
+}
+.marker-cluster-large {
+background-color: rgba(216, 138, 49, 1);
+}
+.marker-cluster-large div {
+background-color: rgba(216, 138, 49, 1);
+}
