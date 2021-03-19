@@ -9,6 +9,8 @@ The Crypt-Keepers is the one stop place for all cryptocurrency needs for all new
 **Search for a Coin**
 Use our search feature to decide where you want to invest next!
 
+![lookup](https://user-images.githubusercontent.com/70446836/111717136-d7c74a00-882d-11eb-9ac3-1d38fd8cc91d.JPG)
+
 **Cryptocurrency 101**
 Feeling lost and need some guidance? That is completely understandable! Cryptocurrency can be a bit of a challenge and may intimidate new users to understand the whole aspect of digital money. However, fear not, as our team has broken it down into simpler terms on our Cryptocurrency 101 page.  
 
@@ -52,10 +54,12 @@ Curious about the most popular cryptocurrencies on the market and how they diffe
 
 
 **Price Predict** 
-Enter a coin name to predict .....
+Enter a coin name to predict the price forecast. 
 
+![lookup](https://user-images.githubusercontent.com/70446836/111717124-d39b2c80-882d-11eb-8c04-5e3007e51528.JPG)
 
 **Predict User Cluster**
+Select a specific user cluster based on our interactive crypto map to review particular factors on a deeper level. 
 
 ## Deployment
 The app is deployed in Heroku in order to access the page click the following link
