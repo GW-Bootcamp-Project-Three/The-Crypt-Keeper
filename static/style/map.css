@@ -26,4 +26,22 @@ html {
 #searchArea {
     font-size: 16px;
 }
-    
+
+.markerClusterSmall {
+  color: rgba(216, 138, 49, 1);
+}
+.markerClusterSmall div {
+  color: rgba(216, 138, 49, 1);
+}
+.markerClusterMedium {
+  color: rgba(216, 138, 49, 1);
+}
+.markerClusterMedium div {
+  color: rgba(216, 138, 49, 1);
+}
+.markerClusterLarge {
+  color: rgba(216, 138, 49, 1);
+}
+.markerClusterLarge div {
+  color: rgba(216, 138, 49, 1);
+}
