@@ -123,6 +123,14 @@ a:hover {
  color: #f3723a;
 }
 
+.navbar  {
+    z-index: 999999;
+}
+
+#page-map .fixed-top {
+    background-color: #f3723a;
+}
+
 nav a {
     color: #fff;
     font-family: 'nexa_lightregular';
@@ -690,10 +698,15 @@ span.trans {
 }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 990px) {
   .jumbotron {
     font-size: 2em; 
-}
+    }
+    #home div[class*='col-'] {
+    font-size: 2em; 
+    padding-bottom: 1em;
+    margin-bottom: 100px;
+    }
 }
 
 @media only screen and (max-width: 650px) 
