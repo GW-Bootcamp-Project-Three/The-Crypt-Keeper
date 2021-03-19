@@ -1,9 +1,9 @@
-# The-Crypt-Keeper
+# The Crypt-Keeper
 ![landing](https://user-images.githubusercontent.com/70446836/111554783-6029ea00-875d-11eb-9457-d6258be7492e.JPG)
 
 
 ## Our Mission
-The Crypt-Keepers is the one stop place for all cryptocurrency needs for all newcomers and experienced buyers! Our team is full of highly advanced data scientists who provide the most updated data out there, just for you! We have created an application that can help guide you to the right cryptocurrency that will fit all your requirements. We feel that everyone should be fully equiped and encouraged to enter this new currency world as it continues to expand! One should feel confident in their ability and have a solid understanding - what better way to do that with an easy one stop application! 
+The Crypt-Keeper is the one stop place for all cryptocurrency needs for all newcomers and experienced buyers! Our team is full of highly advanced data scientists who provide the most updated data out there, just for you! We have created an application that can help guide you to the right cryptocurrency that will fit all your requirements. We feel that everyone should be fully equiped and encouraged to enter this new currency world as it continues to expand! One should feel confident in their ability and have a solid understanding - what better way to do that with an easy one stop application! 
 ## Our application features:
 
 **Search for a Coin**
@@ -55,8 +55,6 @@ Curious about the most popular cryptocurrencies on the market and how they diffe
 
 **Price Predict** 
 Enter a coin name to predict the price forecast. 
-
-![lookup](https://user-images.githubusercontent.com/70446836/111717124-d39b2c80-882d-11eb-8c04-5e3007e51528.JPG)
 
 **Predict User Cluster**
 Select a specific user cluster based on our interactive crypto map to review particular factors on a deeper level. 
