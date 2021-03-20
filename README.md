@@ -27,6 +27,7 @@ It also provides important information regarding the cryptocurrency of your choi
 **ATM Map**
 Discover a crypto ATM near you! Search using our interactive map.
 
+![map](https://user-images.githubusercontent.com/70446836/111847777-ea9a5700-88df-11eb-8bf9-8acb581f3ba9.JPG)
 
 **User Data** 
 If you would like to become a crypt keeper, please participate in our user survey! Here you can input your level of understanding, risk tolerance, any concerns you may off regarding cryptocurrency, and other items. 
@@ -52,12 +53,20 @@ Curious about the most popular cryptocurrencies on the market and how they diffe
 
 ![compare](https://user-images.githubusercontent.com/70446836/111555035-e5ad9a00-875d-11eb-8044-e3cd2dbfd6fa.JPG)
 
+**Where to Buy**
+Discover where to buy and trade cryptocurrency! 
+
+![buy](https://user-images.githubusercontent.com/70446836/111847023-6398af00-88de-11eb-8241-63cc632f67d4.JPG)
 
 **Price Predict** 
 Enter a coin name to predict the price forecast. 
 
+![predictprice](https://user-images.githubusercontent.com/70446836/111847520-5a5c1200-88df-11eb-8e01-336e501ad8ae.JPG)
+
 **Predict User Cluster**
 Select a specific user cluster based on our interactive crypto map to review particular factors on a deeper level. 
+
+![predictusers](https://user-images.githubusercontent.com/70446836/111847598-837ca280-88df-11eb-84d2-84f56b7c1f9d.JPG)
 
 ## Deployment
 The app is deployed in Heroku in order to access the page click the following link

@@ -1,6 +1,6 @@
 var myMap = L.map("map", {
     center: [37.697, -97.314],
-    zoom:5
+    zoom: 5
   });
   
   // Adding tile layer to the map
@@ -10,7 +10,7 @@ var myMap = L.map("map", {
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/light-v10",
-    accessToken:'pk.eyJ1Ijoid2pwYXBwYXMiLCJhIjoiY2traGpneHM1MDBqOTJ3cW5yODI5emUxNSJ9.N1ijsLc2UYQvliuaFtrRPw'
+    accessToken: API_KEY,
   }).addTo(myMap);
   
   var gIcon = new L.Icon({
@@ -51,8 +51,14 @@ var myMap = L.map("map", {
   
     // Add our marker cluster layer to the map
     myMap.addLayer(markers);
-      // Add our marker cluster layer to the map
-  
-    myMap.scrollWheelZoom.disable();
-  
+
   }});
+
+  // myMap.on('click', function() {
+  //   if (myMap.scrollWheelZoom.enabled()) {
+  //     myMap.scrollWheelZoom.disable();
+  //     }
+  //     else {
+  //       myMap.scrollWheelZoom.enable();
+  //     }
+  //   });
