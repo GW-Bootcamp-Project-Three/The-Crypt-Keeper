@@ -51,6 +51,14 @@ var myMap = L.map("map", {
   
     // Add our marker cluster layer to the map
     myMap.addLayer(markers);
-      // Add our marker cluster layer to the map
-  
+
   }});
+
+  // myMap.on('click', function() {
+  //   if (myMap.scrollWheelZoom.enabled()) {
+  //     myMap.scrollWheelZoom.disable();
+  //     }
+  //     else {
+  //       myMap.scrollWheelZoom.enable();
+  //     }
+  //   });
